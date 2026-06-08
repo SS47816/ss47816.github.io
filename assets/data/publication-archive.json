@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-06-08",
+  "source": "data/publications-source.bib + data/publication-overrides.json",
+  "items": [
+    {
+      "id": "where-can-ai-be-used-2026",
+      "title": "Where can AI be used? Insights from a deep ontology of work activities",
+      "authors": "Alice Cai and Iman YeckehZaare and Shuo Sun and Vasiliki Charisi and Xinru Wang and Aiman Imran and Robert Laubacher and Alok Prakash and Thomas Malone",
+      "authorsShort": "A. Cai, I. YeckehZaare, S. Sun, V. Charisi, X. Wang, et al.",
+      "venue": "arXiv",
+      "year": 2026,
+      "type": "preprint",
+      "tags": [
+        "human-AI collective intelligence",
+        "future of work",
+        "augmentation"
+      ],
+      "summary": "A current-facing paper that reflects the move toward understanding where AI can productively augment human work through a structured ontology of activities.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2603.20619"
+      },
+      "featured": true
+    },
+    {
+      "id": "rmp-yolo-2025",
+      "title": "RMP-YOLO: A Robust Motion Predictor for Partially Observable Scenarios even if You Only Look Once",
+      "authors": "Jiawei Sun and Jiahui Li and Tingchen Liu and Chengran Yuan and Shuo Sun and Zefan Huang and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
+      "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
+      "venue": "ICRA 2025",
+      "year": 2025,
+      "type": "conference",
+      "tags": [
+        "motion prediction",
+        "autonomous systems",
+        "perception and planning"
+      ],
+      "summary": "Robust motion prediction for partially observable scenarios, reflecting the continued systems and autonomy thread in the research portfolio.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2409.11696"
+      },
+      "featured": false
+    },
+    {
+      "id": "drivescenegen-2024",
+      "title": "DriveSceneGen: Generating Diverse and Realistic Driving Scenarios From Scratch",
+      "authors": "Shuo Sun and Zekai Gu and Tianchen Sun and Jiawei Sun and Chengran Yuan and Yuhang Han and Dongen Li and Marcelo H. Ang Jr.",
+      "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
+      "venue": "IEEE Robotics and Automation Letters",
+      "year": 2024,
+      "type": "journal",
+      "tags": [
+        "generative simulation",
+        "scenario generation",
+        "autonomous systems"
+      ],
+      "summary": "A generative simulation paper that broadens the portfolio beyond planning into the creation of diverse and realistic scenarios for autonomy development.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2309.14685",
+        "code": "https://github.com/SS47816/DriveSceneGen",
+        "paper": "https://doi.org/10.1109/LRA.2024.3416792"
+      },
+      "featured": true
+    },
+    {
+      "id": "fiss-plus-2023",
+      "title": "FISS+: Efficient and Focused Trajectory Generation and Refinement using Fast Iterative Search and Sampling Strategy",
+      "authors": "Shuo Sun and Jie Chen and Jiawei Sun and Chengran Yuan and Yuanchen Li and Tangyike Zhang and Marcelo H. Ang",
+      "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
+      "venue": "IROS 2023",
+      "year": 2023,
+      "type": "conference",
+      "tags": [
+        "motion planning",
+        "trajectory generation",
+        "autonomous systems"
+      ],
+      "summary": "A coarse-to-fine planning framework that reinforces the technical foundation of efficient real-time trajectory generation.",
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/document/10341396"
+      },
+      "featured": true
+    },
+    {
+      "id": "maxent-irl-frenet-2023",
+      "title": "Maximum Entropy Inverse Reinforcement Learning Based on Frenet Frame Sampling for Human-like Autonomous Driving",
+      "authors": "Tangyike Zhang and Shuo Sun and Jiamin Shi and Shitao Chen and Marcelo H. Ang and Jingmin Xin and Nanning Zheng",
+      "authorsShort": "T. Zhang, S. Sun, J. Shi, S. Chen, M. H. Ang, et al.",
+      "venue": "ITSC 2023",
+      "year": 2023,
+      "type": "conference",
+      "tags": [
+        "human-like autonomy",
+        "inverse reinforcement learning",
+        "motion planning"
+      ],
+      "summary": "A planning-oriented study on learning reward functions that reflect human driving tendencies in multi-lane scenarios.",
+      "links": {},
+      "featured": false
+    },
+    {
+      "id": "autonomous-research-platform-cleaning-2022",
+      "title": "Autonomous Research Platform for Cleaning Operations in Mixed Indoor & Outdoor Environments",
+      "authors": "Shuo Sun and Tangyike Zhang and Zhihai Xiang and Yuhang Han and Dongen Li and Jianghao Li and Zhiyang Liu and Marcelo H. Ang",
+      "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
+      "venue": "ICARCV 2022",
+      "year": 2022,
+      "type": "conference",
+      "tags": [
+        "robotics platform",
+        "field deployment",
+        "autonomous systems"
+      ],
+      "summary": "A systems paper focused on an autonomous cleaning platform deployed across varied real-world environments.",
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/document/10053582"
+      },
+      "featured": false
+    },
+    {
+      "id": "fiss-2022",
+      "title": "FISS: A Trajectory Planning Framework Using Fast Iterative Search and Sampling Strategy for Autonomous Driving",
+      "authors": "Shuo Sun and Zhiyang Liu and Huan Yin and Marcelo H. Ang",
+      "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
+      "venue": "IEEE Robotics and Automation Letters",
+      "year": 2022,
+      "type": "journal",
+      "tags": [
+        "motion planning",
+        "trajectory optimization",
+        "autonomous driving"
+      ],
+      "summary": "A core planning paper in the portfolio, showing the algorithmic groundwork behind later systems and simulation work.",
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/document/9833251",
+        "code": "https://github.com/SS47816/fiss_planner"
+      },
+      "featured": true
+    }
+  ]
+}

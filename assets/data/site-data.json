@@ -1,0 +1,192 @@
+{
+  "profile": {
+    "name": "Shuo Sun",
+    "role": "Postdoctoral Associate",
+    "affiliation": "Singapore-MIT Alliance for Research and Technology (SMART), M3S Interdisciplinary Research Group",
+    "shortBio": "Shuo Sun is a Postdoctoral Associate at SMART M3S whose research spans robotics, autonomous systems, and human-AI collective intelligence, with an emphasis on building intelligent systems that augment human potential and empower the workforce of the future.",
+    "longBio": "He received both his Ph.D. and B.Eng. degrees in Mechanical Engineering from the National University of Singapore, under the supervision of Professor Marcelo H. Ang Jr. His work bridges machine intelligence and human capability through robotics, autonomy, and collective intelligence, with a particular interest in systems that make human-AI collaboration more capable, meaningful, and deployable.",
+    "researchAreas": [
+      "Robotics",
+      "Autonomous Systems",
+      "Human-AI Collective Intelligence",
+      "Motion Planning and Prediction",
+      "Generative Simulation"
+    ],
+    "links": {
+      "email": "shuo.sun@smart.mit.edu",
+      "linkedin": "https://www.linkedin.com/in/shuosunss/",
+      "linkedinLabel": "linkedin.com/in/shuosunss",
+      "github": "https://github.com/SS47816",
+      "githubLabel": "github.com/SS47816",
+      "googleScholar": "https://scholar.google.com/citations?hl=en&user=xe6YcxYAAAAJ&view_op=list_works&sortby=pubdate",
+      "orcid": "https://orcid.org/0000-0002-8432-0452",
+      "orcidLabel": "0000-0002-8432-0452",
+      "cv": "files/Shuo_SUN_CV.pdf"
+    }
+  },
+  "hero": {
+    "bridgeStatement": "Current work at SMART M3S focuses on human-AI collective intelligence and intelligent systems that augment people, while prior autonomy and robotics deployments provide the systems foundation underneath that shift."
+  },
+  "home": {
+    "researchSummary": "The site foregrounds the present arc: from autonomous systems and motion planning toward intelligent systems that coordinate, support, and amplify human work.",
+    "missionTitle": "Design intelligent systems that expand what people and teams can do.",
+    "featuredPublicationIds": [
+      "where-can-ai-be-used-2026",
+      "drivescenegen-2024",
+      "fiss-plus-2023",
+      "fiss-2022"
+    ],
+    "contactPrompt": "If you are working on robotics, autonomy, collective intelligence, AI-enabled labor, or adjacent human-centered systems research, feel free to reach out.",
+    "currentLensTitle": "What the site should make obvious",
+    "currentLensBody": "Shuo Sun is not only an autonomy researcher with older vehicle deployments. He is now positioned as a postdoctoral researcher connecting robotics and autonomous systems with broader questions about human-AI collaboration, augmentation, and the future of work."
+  },
+  "publications": {
+    "archiveNote": "The publication page uses a two-layer model: featured work receives editorial summaries and theme tags, while the full archive is generated from static source data so it remains scalable and reliable on GitHub Pages."
+  },
+  "cv": {
+    "contactNote": "Email is the best way to reach out about research collaboration, talks, postdoctoral opportunities, or applied robotics and AI systems work."
+  },
+  "researchThemes": [
+    {
+      "label": "01",
+      "title": "Human-AI Collective Intelligence",
+      "description": "Developing intelligent systems that help people and organizations think, coordinate, and work more effectively together.",
+      "keywords": [
+        "augmentation",
+        "collective intelligence",
+        "future of work"
+      ]
+    },
+    {
+      "label": "02",
+      "title": "Robotics and Autonomous Systems",
+      "description": "Building real-world robotic and autonomous platforms that can perceive, plan, and operate safely in structured and semi-structured environments.",
+      "keywords": [
+        "robotics",
+        "autonomy",
+        "deployment"
+      ]
+    },
+    {
+      "label": "03",
+      "title": "Planning, Prediction, and Simulation",
+      "description": "Studying motion planning, trajectory generation, prediction, and generative simulation as the algorithmic backbone for capable intelligent systems.",
+      "keywords": [
+        "planning",
+        "prediction",
+        "simulation"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "period": "2025 - Present",
+      "title": "Postdoctoral Associate, SMART M3S",
+      "summary": "Current research at the intersection of robotics, autonomous systems, and human-AI collective intelligence."
+    },
+    {
+      "period": "2021 - 2025",
+      "title": "Ph.D., Mechanical Engineering, NUS",
+      "summary": "Research on autonomous systems, motion planning, prediction, and simulation under Professor Marcelo H. Ang Jr."
+    },
+    {
+      "period": "2016 - 2020",
+      "title": "B.Eng., Mechanical Engineering, NUS",
+      "summary": "Foundation in engineering design, robotics, and interdisciplinary systems work."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Human-AI Work Intelligence",
+      "org": "SMART M3S",
+      "period": "2025 - Present",
+      "status": "Current Research Direction",
+      "summary": "Current work on intelligent systems that augment human capability, support collective intelligence, and help shape more meaningful AI-enabled labor.",
+      "contributions": [
+        "Exploring how robotics and AI systems can move from autonomy-only optimization toward human-centered augmentation.",
+        "Connecting technical system design with questions of collaboration, workforce empowerment, and collective performance.",
+        "Building on prior systems and autonomy research to inform broader human-AI environments."
+      ],
+      "tags": [
+        "human-AI collective intelligence",
+        "augmentation",
+        "future of work"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Autonomous Mini-bus",
+      "org": "NUS · Tron-E · Turing Drive Taiwan",
+      "period": "2023 - Present",
+      "status": "Flagship Deployment",
+      "summary": "Development of an autonomous mini-bus platform for on-demand shuttle services in geofenced environments.",
+      "contributions": [
+        "Led technical design across hardware layout, sensing, and autonomous driving software.",
+        "Worked across perception, HD mapping, localization, planning, and control as an integrated stack.",
+        "Extended deployment-oriented autonomy beyond simulation into operational service scenarios."
+      ],
+      "tags": [
+        "autonomous vehicles",
+        "systems integration",
+        "deployment"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Autonomous Road Sweeper",
+      "org": "NUS · Kärcher Germany",
+      "period": "2020 - 2023",
+      "status": "Flagship Deployment",
+      "summary": "A full autonomous cleaning platform for mixed indoor and outdoor environments, from drive-by-wire retrofitting to full-stack software.",
+      "contributions": [
+        "Led the development of the autonomous road sweeper prototype as the project lead.",
+        "Built a complete autonomy stack spanning perception, HD map, localization, planning, and control.",
+        "Transferred the prototype and software system to the Kärcher Robotics team for commercialization."
+      ],
+      "paperUrl": "https://ieeexplore.ieee.org/document/10053582",
+      "tags": [
+        "robotics platform",
+        "field deployment",
+        "commercialization"
+      ],
+      "featured": true
+    },
+    {
+      "title": "DriveSceneGen",
+      "org": "NUS Advanced Robotics Centre",
+      "period": "2023 - 2024",
+      "status": "Research System",
+      "summary": "A generative simulation system that produces diverse and realistic driving scenarios from scratch for autonomous vehicle development and evaluation.",
+      "contributions": [
+        "Helped push research beyond downstream planning toward data generation and scenario diversity.",
+        "Connected generative modeling with the needs of safety validation and realistic autonomy development.",
+        "Released code and project materials alongside the publication."
+      ],
+      "projectUrl": "https://github.com/SS47816/DriveSceneGen",
+      "tags": [
+        "generative simulation",
+        "scenario generation",
+        "autonomy research"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Autonomous Golf Buggies",
+      "org": "Micron Singapore",
+      "period": "2019",
+      "status": "Industrial Deployment",
+      "summary": "A fleet autonomy project for mobility-on-demand in an intra-fab environment, combining drive-by-wire design, software architecture, planning, control, and onboard interfaces.",
+      "contributions": [
+        "Led a seven-intern team and designed the overall software architecture.",
+        "Built drive-by-wire and the autonomy hardware stack from scratch.",
+        "Implemented perception, HD map representation, trajectory planning, model predictive control, and user interface components."
+      ],
+      "tags": [
+        "industrial autonomy",
+        "planning and control",
+        "leadership"
+      ],
+      "featured": false
+    }
+  ]
+}
