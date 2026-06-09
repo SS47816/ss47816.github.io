@@ -19,7 +19,10 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2603.20619"
       },
-      "featured": true
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "rmp-yolo-2025",
@@ -38,7 +41,10 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2409.11696"
       },
-      "featured": false
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "drivescenegen-2024",
@@ -59,7 +65,10 @@
         "code": "https://github.com/SS47816/DriveSceneGen",
         "paper": "https://doi.org/10.1109/LRA.2024.3416792"
       },
-      "featured": true
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "fiss-plus-2023",
@@ -78,7 +87,10 @@
       "links": {
         "paper": "https://ieeexplore.ieee.org/document/10341396"
       },
-      "featured": true
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "maxent-irl-frenet-2023",
@@ -95,7 +107,10 @@
       ],
       "summary": "A planning-oriented study on learning reward functions that reflect human driving tendencies in multi-lane scenarios.",
       "links": {},
-      "featured": false
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "autonomous-research-platform-cleaning-2022",
@@ -114,7 +129,10 @@
       "links": {
         "paper": "https://ieeexplore.ieee.org/document/10053582"
       },
-      "featured": false
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     },
     {
       "id": "fiss-2022",
@@ -134,7 +152,10 @@
         "paper": "https://ieeexplore.ieee.org/document/9833251",
         "code": "https://github.com/SS47816/fiss_planner"
       },
-      "featured": true
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
     }
   ]
 }

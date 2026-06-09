@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="140" viewBox="0 0 360 140" role="img" aria-labelledby="title desc">
+  <title id="title">SMART wordmark</title>
+  <desc id="desc">Stylized local SMART identity badge for the website affiliation bar.</desc>
+  <rect width="360" height="140" rx="28" fill="#ffffff"/>
+  <rect x="14" y="14" width="332" height="112" rx="20" fill="#edf2ff" stroke="#27488f" stroke-opacity=".14"/>
+  <text x="36" y="70" fill="#27488f" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="3">SMART</text>
+  <text x="38" y="102" fill="#5a678a" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="2">MIT ALLIANCE · SINGAPORE</text>
+  <circle cx="298" cy="50" r="20" fill="#27488f" fill-opacity=".12"/>
+  <path d="M288 50h20M298 40v20" stroke="#27488f" stroke-width="3" stroke-linecap="round"/>
+</svg>

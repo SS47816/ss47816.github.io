@@ -3,6 +3,9 @@
     "authorsShort": "A. Cai, I. YeckehZaare, S. Sun, V. Charisi, X. Wang, et al.",
     "venue": "arXiv",
     "type": "preprint",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "human-AI collective intelligence",
       "future of work",
@@ -15,6 +18,9 @@
     "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
     "venue": "ICRA 2025",
     "type": "conference",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "motion prediction",
       "autonomous systems",
@@ -25,6 +31,9 @@
   },
   "drivescenegen-2024": {
     "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "generative simulation",
       "scenario generation",
@@ -37,6 +46,9 @@
     "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
     "venue": "IROS 2023",
     "type": "conference",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "motion planning",
       "trajectory generation",
@@ -49,6 +61,9 @@
     "authorsShort": "T. Zhang, S. Sun, J. Shi, S. Chen, M. H. Ang, et al.",
     "venue": "ITSC 2023",
     "type": "conference",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "human-like autonomy",
       "inverse reinforcement learning",
@@ -59,6 +74,9 @@
   },
   "fiss-2022": {
     "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "motion planning",
       "trajectory optimization",
@@ -71,6 +89,9 @@
     "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
     "venue": "ICARCV 2022",
     "type": "conference",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
     "tags": [
       "robotics platform",
       "field deployment",

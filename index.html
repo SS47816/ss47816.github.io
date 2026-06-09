@@ -25,8 +25,8 @@
           <span>Robotics · Autonomous Systems</span>
         </a>
         <nav class="links" aria-label="Primary">
-          <a href="projects.html">Projects</a>
-          <a href="publications.html">Publications</a>
+          <a href="#work">Projects</a>
+          <a href="#pubs">Publications</a>
           <a href="#about">About</a>
           <a href="#news">News</a>
           <a href="#contact">Contact</a>
@@ -77,11 +77,7 @@
     <div class="affil">
       <div class="wrap affil-row reveal">
         <span class="lab">Currently</span>
-        <div class="item"><b>SMART</b><span>Postdoctoral Associate · M3S IRG</span></div>
-        <div class="sep"></div>
-        <div class="item"><b>MIT CCI</b><span>Center for Collective Intelligence</span></div>
-        <div class="sep"></div>
-        <div class="item"><b>NUS</b><span>Ph.D. &amp; B.Eng., Mechanical Engineering</span></div>
+        <div class="affil-cards" id="current-affiliations"></div>
       </div>
     </div>
 
@@ -95,52 +91,7 @@
           <a class="sec-link" href="projects.html">All projects →</a>
         </div>
 
-        <div class="proj-grid">
-          <article class="proj reveal">
-            <div class="pic">
-              <span class="tagline">2023 — Now</span>
-              <img src="assets/images/hero-minibus.png" alt="Autonomous mini-bus" />
-            </div>
-            <div class="body">
-              <h3 class="serif">Autonomous Mini-bus</h3>
-              <p>
-                Project lead developing a full self-driving stack — perception, HD map, localization, planning, control — for
-                on-demand campus shuttles, with NUS, Tron-E, and Turing Drive.
-              </p>
-              <div class="foot"><span>NUS · Industry</span><span class="go">Read →</span></div>
-            </div>
-          </article>
-
-          <article class="proj reveal">
-            <div class="pic">
-              <span class="tagline">2020 — 2023</span>
-              <img src="assets/images/project-road-sweeper.jpg" alt="Autonomous road sweeper" />
-            </div>
-            <div class="body">
-              <h3 class="serif">Autonomous Road Sweeper</h3>
-              <p>
-                Retrofitted a Karcher sweeper into a Drive-by-Wire robot for cleaning in mixed indoor and outdoor environments,
-                then transferred the system to Karcher Robotics for commercialization.
-              </p>
-              <div class="foot"><span>NUS × Karcher</span><span class="go">Read →</span></div>
-            </div>
-          </article>
-
-          <article class="proj reveal">
-            <div class="pic">
-              <span class="tagline">2019</span>
-              <img src="assets/images/project-golf-buggies.jpg" alt="Autonomous golf buggies at Micron" />
-            </div>
-            <div class="body">
-              <h3 class="serif">Autonomous Golf Buggies</h3>
-              <p>
-                Led a seven-intern team to build the full autonomous-driving system for a fleet of shuttles operating inside the
-                Micron Singapore fab, from drive-by-wire to planning and control.
-              </p>
-              <div class="foot"><span>Micron · MAVIS</span><span class="go">Read →</span></div>
-            </div>
-          </article>
-        </div>
+        <div class="proj-grid" id="home-projects"></div>
       </div>
     </section>
 
@@ -151,91 +102,13 @@
             <span class="num">02 — Publications</span>
             <h2 class="serif">Selected papers.</h2>
             <p class="lead-l" style="margin: 14px 0 0; color: var(--muted); font-size: 15.5px;">
-              Across trajectory planning, generative simulation, and human-AI collective intelligence. The full archive now lives
-              on a dedicated page.
+              Recent publications across autonomy, simulation, and human-AI collective intelligence, synced from a Scholar-exported source and enriched with local summaries, tags, and media.
             </p>
           </div>
-          <a class="sec-link" href="publications.html">Publication archive →</a>
+          <a class="sec-link" href="publications.html">All publications →</a>
         </div>
 
-        <div class="pub-list reveal">
-          <div class="pub">
-            <span class="pn">01</span>
-            <div class="pt">
-              AGI-Elo: How Far Are We from Mastering a Task?
-              <span class="auth"><b>S. Sun</b>, et al.</span>
-              <div class="links">
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">PDF</a>
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">Project</a>
-              </div>
-            </div>
-            <div class="ven">NeurIPS<span class="yr">2025</span><span class="star">First author</span></div>
-          </div>
-
-          <div class="pub">
-            <span class="pn">02</span>
-            <div class="pt">
-              Where Can AI Be Used? Insights from a Deep Ontology of Work Activities
-              <span class="auth">MIT Center for Collective Intelligence · with T. W. Malone, et al.</span>
-              <div class="links">
-                <a class="chip" href="https://ontology.mit.edu/landing#team" target="_blank" rel="noopener">Project</a>
-              </div>
-            </div>
-            <div class="ven">MIT CCI<span class="yr">2026</span></div>
-          </div>
-
-          <div class="pub">
-            <span class="pn">03</span>
-            <div class="pt">
-              DriveSceneGen: Generating Diverse and Realistic Driving Scenarios from Scratch
-              <span class="auth"><b>S. Sun</b>, Z. Gu, T. Sun, J. Sun, C. Yuan, Y. Han, D. Li, M. H. Ang Jr.</span>
-              <div class="links">
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">PDF</a>
-                <a class="chip" href="https://github.com/SS47816/DriveSceneGen" target="_blank" rel="noopener">Code</a>
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">Video</a>
-              </div>
-            </div>
-            <div class="ven">RA-L · ICRA<span class="yr">2024 / 2025</span><span class="star">First author</span></div>
-          </div>
-
-          <div class="pub">
-            <span class="pn">04</span>
-            <div class="pt">
-              FISS+: Efficient and Focused Trajectory Generation and Refinement using Fast Iterative Search and Sampling Strategy
-              <span class="auth"><b>S. Sun</b>, J. Chen, J. Sun, C. Yuan, Y. Li, T. Zhang, M. H. Ang Jr.</span>
-              <div class="links">
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">PDF</a>
-              </div>
-            </div>
-            <div class="ven">IROS<span class="yr">2023</span><span class="star">First author</span></div>
-          </div>
-
-          <div class="pub">
-            <span class="pn">05</span>
-            <div class="pt">
-              FISS: A Trajectory Planning Framework Using Fast Iterative Search and Sampling Strategy for Autonomous Driving
-              <span class="auth"><b>S. Sun</b>, Z. Liu, H. Yin, M. H. Ang Jr.</span>
-              <div class="links">
-                <a class="chip" href="https://ieeexplore.ieee.org/document/9833251" target="_blank" rel="noopener">PDF</a>
-                <a class="chip" href="https://github.com/SS47816/fiss_planner" target="_blank" rel="noopener">Code</a>
-                <a class="chip" href="https://youtu.be/jzRzVJsofPU" target="_blank" rel="noopener">Video</a>
-              </div>
-            </div>
-            <div class="ven">RA-L<span class="yr">2022</span><span class="star">First author</span></div>
-          </div>
-
-          <div class="pub">
-            <span class="pn">06</span>
-            <div class="pt">
-              Computational Design of Ultra-robust Strain Sensors for Soft Robot Perception and Autonomy
-              <span class="auth">H. Yang, S. Ding, J. Wang, <b>S. Sun</b>, et al.</span>
-              <div class="links">
-                <a class="chip" href="https://scholar.google.com/citations?hl=en&amp;user=xe6YcxYAAAAJ" target="_blank" rel="noopener">PDF</a>
-              </div>
-            </div>
-            <div class="ven">Nature Comms.<span class="yr">2024</span></div>
-          </div>
-        </div>
+        <div class="reveal" id="home-publications"></div>
       </div>
     </section>
 
@@ -289,7 +162,7 @@
             <div class="stats">
               <div class="stat"><b>3</b><span>Deployed platforms</span></div>
               <div class="stat"><b>70+</b><span>Theses mentored</span></div>
-              <div class="stat"><b>15+</b><span>Publications</span></div>
+              <div class="stat"><b data-publication-count>0</b><span>Synced publications</span></div>
             </div>
           </div>
         </div>

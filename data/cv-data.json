@@ -1,0 +1,36 @@
+{
+  "appointments": [
+    {
+      "title": "Postdoctoral Associate",
+      "institution": "Singapore-MIT Alliance for Research and Technology (SMART)",
+      "department": "M3S Interdisciplinary Research Group",
+      "period": "2025 - Present",
+      "location": "Singapore",
+      "summary": "Research at the intersection of robotics, autonomous systems, and human-AI collective intelligence."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Mechanical Engineering",
+      "institution": "National University of Singapore",
+      "period": "2021 - 2025",
+      "summary": "Research on autonomous systems, motion planning, prediction, and simulation under Professor Marcelo H. Ang Jr."
+    },
+    {
+      "degree": "B.Eng. in Mechanical Engineering",
+      "institution": "National University of Singapore",
+      "period": "2016 - 2020",
+      "summary": "Foundation in robotics, engineering design, and interdisciplinary systems work."
+    }
+  ],
+  "awards": [],
+  "service": [],
+  "teaching": [],
+  "mentoring": [
+    {
+      "label": "Student supervision and mentoring",
+      "period": "2019 - Present",
+      "summary": "Mentored more than 70 student theses, capstone, and research projects across robotics and autonomous systems."
+    }
+  ]
+}

@@ -166,18 +166,123 @@ function initBackToTop() {
 }
 
 async function loadData() {
-  const [siteResponse, publicationResponse] = await Promise.all([
+  const [siteResponse, publicationResponse, cvResponse] = await Promise.all([
     fetch("assets/data/site-data.json"),
     fetch("assets/data/publication-archive.json"),
+    fetch("data/cv-data.json"),
   ]);
 
-  if (!siteResponse.ok || !publicationResponse.ok) {
+  if (!siteResponse.ok || !publicationResponse.ok || !cvResponse.ok) {
     throw new Error("Unable to load site data.");
   }
 
-  const site = await siteResponse.json();
-  const archive = await publicationResponse.json();
-  return { site, archive };
+  const [site, archive, cvData] = await Promise.all([
+    siteResponse.json(),
+    publicationResponse.json(),
+    cvResponse.json(),
+  ]);
+
+  return { site, archive, cvData };
+}
+
+function sortPublications(items = []) {
+  return [...items].sort((a, b) => {
+    if (b.year !== a.year) {
+      return b.year - a.year;
+    }
+
+    return a.title.localeCompare(b.title);
+  });
+}
+
+function groupPublicationsByYear(items) {
+  return sortPublications(items).reduce((groups, item) => {
+    const key = String(item.year || "Unknown");
+    groups[key] ||= [];
+    groups[key].push(item);
+    return groups;
+  }, {});
+}
+
+function getFeaturedPublications(site, archive) {
+  const ids = Array.isArray(site.home.featuredPublicationIds) ? site.home.featuredPublicationIds : [];
+  const featured = ids.length
+    ? archive.items.filter((item) => ids.includes(item.id))
+    : archive.items.filter((item) => item.featured);
+
+  return sortPublications(featured).slice(0, 6);
+}
+
+function renderPublicationThumbnail(item) {
+  if (item.thumbnail) {
+    return `
+      <div class="pub-thumb">
+        <img src="${escapeHtml(item.thumbnail)}" alt="${escapeHtml(item.thumbnailAlt || item.title)}" />
+      </div>
+    `;
+  }
+
+  const initials = item.title
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0] || "")
+    .join("")
+    .toUpperCase();
+
+  return `
+    <div class="pub-thumb placeholder" aria-hidden="true">
+      <span>${escapeHtml(initials || "PA")}</span>
+    </div>
+  `;
+}
+
+function renderPublicationEntry(item, index) {
+  return `
+    <article class="pub-entry">
+      <span class="pub-num">${String(index + 1).padStart(2, "0")}</span>
+      ${renderPublicationThumbnail(item)}
+      <div class="pub-main">
+        <h3 class="pub-title">${escapeHtml(item.title)}</h3>
+        <p class="pub-authors">${escapeHtml(item.authorsShort)}</p>
+        ${item.summary ? `<p class="pub-summary">${escapeHtml(item.summary)}</p>` : ""}
+        ${renderTagRow(item.tags)}
+        <div class="link-row">${renderPublicationLinks(item.links)}</div>
+      </div>
+      <div class="pub-meta">
+        <span class="pub-meta-line">${escapeHtml(item.venue)}</span>
+        <span class="pub-meta-line pub-year">${escapeHtml(item.year || "—")}</span>
+        <span class="pub-meta-line pub-type">${escapeHtml(item.type)}</span>
+      </div>
+    </article>
+  `;
+}
+
+function renderPublicationStream(items, options = {}) {
+  const { grouped = false } = options;
+
+  if (!items.length) {
+    return '<div class="empty-state">No publications are available yet.</div>';
+  }
+
+  if (!grouped) {
+    return `<div class="pub-stream">${items.map((item, index) => renderPublicationEntry(item, index)).join("")}</div>`;
+  }
+
+  const groups = groupPublicationsByYear(items);
+  const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
+
+  return years
+    .map(
+      (year) => `
+        <section class="pub-year-group reveal">
+          <h2 class="pub-year-heading">${escapeHtml(year)}</h2>
+          <div class="pub-stream">
+            ${groups[year].map((item, index) => renderPublicationEntry(item, index)).join("")}
+          </div>
+        </section>
+      `,
+    )
+    .join("");
 }
 
 function renderProjectMedia(project) {
@@ -207,125 +312,80 @@ function renderProjectMedia(project) {
   `;
 }
 
-function renderPublications(site, archive) {
-  const filters = ["All", ...new Set(archive.items.flatMap((item) => item.tags))];
+function renderHomeProjects(site) {
+  return site.projects
+    .filter((project) => project.featured)
+    .slice(0, 3)
+    .map((project) => {
+      const mediaMarkup =
+        project.title === "Autonomous Mini-bus"
+          ? '<img src="assets/images/hero-minibus.png" alt="Autonomous mini-bus" />'
+          : project.title === "Autonomous Road Sweeper"
+            ? '<img src="assets/images/project-road-sweeper.jpg" alt="Autonomous road sweeper" />'
+            : project.title === "Autonomous Golf Buggies"
+              ? '<img src="assets/images/project-golf-buggies.jpg" alt="Autonomous golf buggies" />'
+              : `<span class="placeholder-mark">${escapeHtml(project.status)}</span>`;
 
-  app.innerHTML = `
-    <section class="page-section">
-      <div class="wrap">
-        <div class="page-hero reveal">
-          <div>
-            <span class="eyebrow">Publications</span>
-            <h1>Selected papers, with a full archive that stays easy to browse.</h1>
-            <p class="lead">The visual language now matches the homepage, while the publication list remains generated from your static source data for reliable GitHub Pages hosting.</p>
+      const picClass = mediaMarkup.includes("<img") ? "pic" : "pic placeholder";
+
+      return `
+        <article class="proj reveal">
+          <div class="${picClass}">
+            <span class="tagline">${escapeHtml(project.period.replace("Present", "Now"))}</span>
+            ${mediaMarkup}
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="body">
+            <h3 class="serif">${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.summary)}</p>
+            <div class="foot"><span>${escapeHtml(project.org)}</span><span class="go">Read →</span></div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
 
-    <section class="page-section">
-      <div class="wrap">
-        <div class="callout-grid">
-          <article class="callout reveal">
-            <span class="eyebrow">Archive Strategy</span>
-            <h2>Curated where it matters. Generated where it scales.</h2>
-            <p>${escapeHtml(site.publications.archiveNote)}</p>
-          </article>
-          <article class="callout reveal">
-            <span class="eyebrow">Source</span>
-            <h2>Static, inspectable, and easy to update.</h2>
-            <p><strong>Last generated:</strong> ${escapeHtml(archive.generatedAt)}</p>
-            <p><strong>Primary source:</strong> ${escapeHtml(archive.source)}</p>
-            <div class="link-row">
-              ${renderButtonLink(site.profile.links.googleScholar, "Scholar", "primary")}
-              ${renderButtonLink(site.profile.links.orcid, "ORCID")}
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+function renderAffiliations(site) {
+  return site.affiliationsCurrent
+    .map(
+      (item) => `
+        <a class="affil-card" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">
+          <span class="affil-badge">
+            <img src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt)}" />
+          </span>
+          <span class="affil-copy">
+            <strong>${escapeHtml(item.name)}</strong>
+            <span>${escapeHtml(item.subtitle)}</span>
+          </span>
+        </a>
+      `,
+    )
+    .join("");
+}
 
-    <section class="page-section">
-      <div class="wrap">
-        <div class="filter-row reveal" id="publication-filters"></div>
-        <div id="publication-results"></div>
+function renderCvList(items, renderer) {
+  if (!items.length) {
+    return "";
+  }
+
+  return items.map(renderer).join("");
+}
+
+function renderCvSection(label, items, renderer) {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <section class="cv-section-block reveal">
+      <div class="cv-section-head">
+        <span class="eyebrow">${escapeHtml(label)}</span>
+      </div>
+      <div class="cv-section-grid">
+        ${renderCvList(items, renderer)}
       </div>
     </section>
   `;
-
-  const filterRoot = document.getElementById("publication-filters");
-  const resultsRoot = document.getElementById("publication-results");
-
-  function groupedItems(selectedTag) {
-    const visible =
-      selectedTag === "All" ? archive.items : archive.items.filter((item) => item.tags.includes(selectedTag));
-
-    return visible.reduce((groups, item) => {
-      groups[item.year] ||= [];
-      groups[item.year].push(item);
-      return groups;
-    }, {});
-  }
-
-  function renderArchive(selectedTag = "All") {
-    const groups = groupedItems(selectedTag);
-    const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
-
-    resultsRoot.innerHTML = years.length
-      ? years
-          .map(
-            (year) => `
-              <section class="year-block reveal">
-                <h2 class="year-heading">${escapeHtml(year)}</h2>
-                <div class="paper-grid">
-                  ${groups[year]
-                    .map(
-                      (item) => `
-                        <article class="paper-card ${item.featured ? "featured" : ""}">
-                          <div class="paper-topline">
-                            <span class="pill">${escapeHtml(item.type)}</span>
-                            <span class="subtle">${escapeHtml(item.venue)}</span>
-                          </div>
-                          <h3>${escapeHtml(item.title)}</h3>
-                          <p class="paper-meta"><strong>${escapeHtml(item.authorsShort)}</strong></p>
-                          <p class="paper-summary">${escapeHtml(item.summary)}</p>
-                          ${renderTagRow(item.tags)}
-                          <div class="link-row">${renderPublicationLinks(item.links)}</div>
-                        </article>
-                      `,
-                    )
-                    .join("")}
-                </div>
-              </section>
-            `,
-          )
-          .join("")
-      : '<div class="empty-state reveal">No publications match that theme yet.</div>';
-
-    filterRoot.querySelectorAll(".filter-chip").forEach((button) => {
-      button.classList.toggle("active", button.dataset.tag === selectedTag);
-    });
-
-    refreshReveal();
-  }
-
-  filterRoot.innerHTML = filters
-    .map(
-      (tag) =>
-        `<button class="filter-chip ${tag === "All" ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`,
-    )
-    .join("");
-
-  filterRoot.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement) || !target.dataset.tag) {
-      return;
-    }
-
-    renderArchive(target.dataset.tag);
-  });
-
-  renderArchive();
 }
 
 function renderProjects(site) {
@@ -335,8 +395,8 @@ function renderProjects(site) {
         <div class="page-hero reveal">
           <div>
             <span class="eyebrow">Projects</span>
-            <h1>Systems work that grounds the broader research arc.</h1>
-            <p class="lead">This page keeps the deployment-heavy robotics work, current human-AI direction, and supporting research systems in one visual system so the story feels coherent across the site.</p>
+            <h1>${escapeHtml(site.projectsPage.pageTitle)}</h1>
+            <p class="lead">${escapeHtml(site.projectsPage.pageLead)}</p>
           </div>
         </div>
       </div>
@@ -374,15 +434,17 @@ function renderProjects(site) {
   `;
 }
 
-function renderCv(site) {
+function renderPublications(site, archive) {
+  const filters = ["All", ...new Set(archive.items.flatMap((item) => item.tags))];
+
   app.innerHTML = `
     <section class="page-section">
       <div class="wrap">
         <div class="page-hero reveal">
           <div>
-            <span class="eyebrow">CV / Contact</span>
-            <h1>Professional profile, affiliations, and the fastest way to reach out.</h1>
-            <p class="lead">This page stays practical: background, current position, research areas, and direct contact links, all using the same type and spacing system as the new homepage.</p>
+            <span class="eyebrow">Publications</span>
+            <h1>${escapeHtml(site.publications.pageTitle)}</h1>
+            <p class="lead">${escapeHtml(site.publications.pageLead)}</p>
           </div>
         </div>
       </div>
@@ -390,24 +452,103 @@ function renderCv(site) {
 
     <section class="page-section">
       <div class="wrap">
-        <div class="profile-grid">
-          <article class="profile-card reveal">
+        <div class="callout-grid">
+          <article class="callout reveal">
+            <span class="eyebrow">Archive</span>
+            <h2>${escapeHtml(site.publications.pageCalloutTitle)}</h2>
+            <p>${escapeHtml(site.publications.pageCalloutBody)}</p>
+          </article>
+          <article class="callout reveal">
+            <span class="eyebrow">Source</span>
+            <h2>Scholar-synced, locally enriched.</h2>
+            <p><strong>Last generated:</strong> ${escapeHtml(archive.generatedAt)}</p>
+            <p><strong>Primary source:</strong> ${escapeHtml(archive.source)}</p>
+            <div class="link-row">
+              ${renderButtonLink(site.profile.links.googleScholar, "Scholar", "primary")}
+              ${renderButtonLink(site.profile.links.orcid, "ORCID")}
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="filter-row reveal" id="publication-filters"></div>
+        <div id="publication-results"></div>
+      </div>
+    </section>
+  `;
+
+  const filterRoot = document.getElementById("publication-filters");
+  const resultsRoot = document.getElementById("publication-results");
+
+  function visibleItems(selectedTag) {
+    return selectedTag === "All" ? archive.items : archive.items.filter((item) => item.tags.includes(selectedTag));
+  }
+
+  function renderArchive(selectedTag = "All") {
+    const items = visibleItems(selectedTag);
+    resultsRoot.innerHTML = renderPublicationStream(items, { grouped: true });
+
+    filterRoot.querySelectorAll(".filter-chip").forEach((button) => {
+      button.classList.toggle("active", button.dataset.tag === selectedTag);
+    });
+
+    refreshReveal();
+  }
+
+  filterRoot.innerHTML = filters
+    .map(
+      (tag) =>
+        `<button class="filter-chip ${tag === "All" ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`,
+    )
+    .join("");
+
+  filterRoot.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || !target.dataset.tag) {
+      return;
+    }
+
+    renderArchive(target.dataset.tag);
+  });
+
+  renderArchive();
+}
+
+function renderCv(site, archive, cvData) {
+  app.innerHTML = `
+    <section class="page-section">
+      <div class="wrap">
+        <div class="page-hero reveal">
+          <div>
+            <span class="eyebrow">CV / Contact</span>
+            <h1>${escapeHtml(site.cv.pageTitle)}</h1>
+            <p class="lead">${escapeHtml(site.cv.pageLead)}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="wrap">
+        <div class="cv-shell">
+          <article class="cv-overview reveal">
             <span class="eyebrow">Profile</span>
             <h2>${escapeHtml(site.profile.name)}</h2>
             <p>${escapeHtml(site.profile.longBio)}</p>
-            <div class="profile-list">
-              <div class="detail-row">
-                <span class="detail-label">Current Role</span>
-                <strong>${escapeHtml(site.profile.role)}</strong>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Affiliation</span>
-                <strong>${escapeHtml(site.profile.affiliation)}</strong>
-              </div>
-              <div class="detail-row">
-                <span class="detail-label">Research Areas</span>
-                <p>${escapeHtml(site.profile.researchAreas.join(" · "))}</p>
-              </div>
+            <div class="detail-row">
+              <span class="detail-label">Current Role</span>
+              <strong>${escapeHtml(site.profile.role)}</strong>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Affiliation</span>
+              <strong>${escapeHtml(site.profile.affiliation)}</strong>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Research Areas</span>
+              <p>${escapeHtml(site.profile.researchAreas.join(" · "))}</p>
             </div>
             <div class="link-row">
               ${renderButtonLink(site.profile.links.cv, "Download CV", "primary")}
@@ -415,33 +556,184 @@ function renderCv(site) {
             </div>
           </article>
 
-          <article class="contact-card-alt reveal">
-            <span class="eyebrow">Reach Out</span>
-            <h2>Contact</h2>
-            <p>${escapeHtml(site.cv.contactNote)}</p>
-            <div class="contact-list">
-              <div class="contact-item">
-                <span class="contact-label">Email</span>
-                <a href="mailto:${escapeHtml(site.profile.links.email)}">${escapeHtml(site.profile.links.email)}</a>
+          <div class="cv-sections">
+            ${renderCvSection(
+              "Appointments",
+              cvData.appointments,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period)}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.title)}</strong>
+                    <span class="subtle">${escapeHtml(item.institution)} · ${escapeHtml(item.department)}</span>
+                    <p>${escapeHtml(item.summary)}</p>
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Education",
+              cvData.education,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period)}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.degree)}</strong>
+                    <span class="subtle">${escapeHtml(item.institution)}</span>
+                    <p>${escapeHtml(item.summary)}</p>
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Awards",
+              cvData.awards,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period || "")}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.title || item.label || "")}</strong>
+                    ${item.institution ? `<span class="subtle">${escapeHtml(item.institution)}</span>` : ""}
+                    ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Teaching",
+              cvData.teaching,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period || "")}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.title || item.label || "")}</strong>
+                    ${item.institution ? `<span class="subtle">${escapeHtml(item.institution)}</span>` : ""}
+                    ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Service",
+              cvData.service,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period || "")}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.title || item.label || "")}</strong>
+                    ${item.institution ? `<span class="subtle">${escapeHtml(item.institution)}</span>` : ""}
+                    ${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Mentoring",
+              cvData.mentoring,
+              (item) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(item.period)}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(item.label)}</strong>
+                    <p>${escapeHtml(item.summary)}</p>
+                  </div>
+                </div>
+              `,
+            )}
+
+            ${renderCvSection(
+              "Selected Projects",
+              site.projects.filter((project) => project.featured),
+              (project) => `
+                <div class="cv-row">
+                  <span class="cv-row-period">${escapeHtml(project.period)}</span>
+                  <div class="cv-row-body">
+                    <strong>${escapeHtml(project.title)}</strong>
+                    <span class="subtle">${escapeHtml(project.org)} · ${escapeHtml(project.status)}</span>
+                    <p>${escapeHtml(project.summary)}</p>
+                  </div>
+                </div>
+              `,
+            )}
+
+            <section class="cv-section-block reveal">
+              <div class="cv-section-head">
+                <span class="eyebrow">Publications</span>
               </div>
-              <div class="contact-item">
-                <span class="contact-label">LinkedIn</span>
-                <a href="${escapeHtml(site.profile.links.linkedin)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.linkedinLabel)}</a>
+              <div class="cv-publications">
+                ${renderCvList(
+                  archive.items,
+                  (item) => `
+                    <article class="cv-pub">
+                      <div class="cv-pub-top">
+                        <span>${escapeHtml(item.type)}</span>
+                        <span>${escapeHtml(item.venue)} · ${escapeHtml(item.year)}</span>
+                      </div>
+                      <h3>${escapeHtml(item.title)}</h3>
+                      <p>${escapeHtml(item.authorsShort)}</p>
+                    </article>
+                  `,
+                )}
               </div>
-              <div class="contact-item">
-                <span class="contact-label">GitHub</span>
-                <a href="${escapeHtml(site.profile.links.github)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.githubLabel)}</a>
+            </section>
+
+            <section class="cv-section-block reveal">
+              <div class="cv-section-head">
+                <span class="eyebrow">Contact</span>
               </div>
-              <div class="contact-item">
-                <span class="contact-label">ORCID</span>
-                <a href="${escapeHtml(site.profile.links.orcid)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.orcidLabel)}</a>
+              <p class="cv-contact-copy">${escapeHtml(site.cv.contactNote)}</p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:${escapeHtml(site.profile.links.email)}">${escapeHtml(site.profile.links.email)}</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">LinkedIn</span>
+                  <a href="${escapeHtml(site.profile.links.linkedin)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.linkedinLabel)}</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">GitHub</span>
+                  <a href="${escapeHtml(site.profile.links.github)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.githubLabel)}</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">ORCID</span>
+                  <a href="${escapeHtml(site.profile.links.orcid)}" target="_blank" rel="noreferrer">${escapeHtml(site.profile.links.orcidLabel)}</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </section>
+          </div>
         </div>
       </div>
     </section>
   `;
+}
+
+function enhanceHome(site, archive) {
+  const affiliationsRoot = document.getElementById("current-affiliations");
+  const projectRoot = document.getElementById("home-projects");
+  const publicationRoot = document.getElementById("home-publications");
+  const publicationCount = document.querySelector("[data-publication-count]");
+
+  if (affiliationsRoot) {
+    affiliationsRoot.innerHTML = renderAffiliations(site);
+  }
+
+  if (projectRoot) {
+    projectRoot.innerHTML = renderHomeProjects(site);
+  }
+
+  if (publicationRoot) {
+    publicationRoot.innerHTML = renderPublicationStream(getFeaturedPublications(site, archive));
+  }
+
+  if (publicationCount) {
+    publicationCount.textContent = String(archive.items.length);
+  }
 }
 
 async function main() {
@@ -449,14 +741,17 @@ async function main() {
   initBackToTop();
   initReveal();
 
-  if (page === "home" || page === "not-found" || !app) {
+  if (page === "not-found") {
     return;
   }
 
   try {
-    const { site, archive } = await loadData();
+    const { site, archive, cvData } = await loadData();
 
     switch (page) {
+      case "home":
+        enhanceHome(site, archive);
+        break;
       case "publications":
         renderPublications(site, archive);
         break;
@@ -464,21 +759,26 @@ async function main() {
         renderProjects(site);
         break;
       case "cv":
-        renderCv(site);
+        renderCv(site, archive, cvData);
         break;
       default:
-        app.innerHTML = '<div class="wrap"><section class="page-section"><div class="empty-state reveal">Unknown page.</div></section></div>';
+        if (app) {
+          app.innerHTML = '<div class="wrap"><section class="page-section"><div class="empty-state reveal">Unknown page.</div></section></div>';
+        }
     }
 
     refreshReveal();
   } catch (error) {
-    app.innerHTML = `
-      <div class="wrap">
-        <section class="page-section">
-          <div class="empty-state reveal">The site data could not be loaded. Serve the site with a local web server instead of opening the files directly.</div>
-        </section>
-      </div>
-    `;
+    if (app) {
+      app.innerHTML = `
+        <div class="wrap">
+          <section class="page-section">
+            <div class="empty-state reveal">The site data could not be loaded. Serve the site with a local web server instead of opening the files directly.</div>
+          </section>
+        </div>
+      `;
+    }
+
     refreshReveal();
     console.error(error);
   }

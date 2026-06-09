@@ -24,6 +24,32 @@
       "cv": "files/Shuo_SUN_CV.pdf"
     }
   },
+  "affiliationsCurrent": [
+    {
+      "id": "smart",
+      "name": "SMART",
+      "subtitle": "Postdoctoral Associate · M3S IRG",
+      "logo": "assets/images/logos/smart.svg",
+      "logoAlt": "SMART wordmark",
+      "url": "https://smart.mit.edu/"
+    },
+    {
+      "id": "mit-cci",
+      "name": "MIT CCI",
+      "subtitle": "Center for Collective Intelligence",
+      "logo": "assets/images/logos/mit-cci.svg",
+      "logoAlt": "MIT Center for Collective Intelligence wordmark",
+      "url": "https://cci.mit.edu/"
+    },
+    {
+      "id": "nus",
+      "name": "NUS",
+      "subtitle": "Ph.D. & B.Eng., Mechanical Engineering",
+      "logo": "assets/images/logos/nus.svg",
+      "logoAlt": "National University of Singapore wordmark",
+      "url": "https://www.nus.edu.sg/"
+    }
+  ],
   "hero": {
     "bridgeStatement": "Current work at SMART M3S focuses on human-AI collective intelligence and intelligent systems that augment people, while prior autonomy and robotics deployments provide the systems foundation underneath that shift."
   },
@@ -41,10 +67,21 @@
     "currentLensBody": "Shuo Sun is not only an autonomy researcher with older vehicle deployments. He is now positioned as a postdoctoral researcher connecting robotics and autonomous systems with broader questions about human-AI collaboration, augmentation, and the future of work."
   },
   "publications": {
-    "archiveNote": "The publication page uses a two-layer model: featured work receives editorial summaries and theme tags, while the full archive is generated from static source data so it remains scalable and reliable on GitHub Pages."
+    "archiveNote": "The publication page uses a two-layer model: featured work receives editorial summaries and theme tags, while the full archive is generated from static source data so it remains scalable and reliable on GitHub Pages.",
+    "pageTitle": "Publications that connect autonomy, simulation, and human-centered intelligent systems.",
+    "pageLead": "This archive is designed for visitors who want a clear view of the research trajectory: real-world autonomy, generative simulation, and newer work on human-AI collective intelligence.",
+    "pageCalloutTitle": "A living publication archive.",
+    "pageCalloutBody": "Entries are synced from a Scholar-exported BibTeX source and then enriched locally with summaries, tags, links, and optional graphical abstracts.",
+    "archiveCtaLabel": "All publications →"
+  },
+  "projectsPage": {
+    "pageTitle": "Projects that show how ideas become deployed systems.",
+    "pageLead": "From autonomous vehicles and robotic platforms to current human-AI research directions, this page is meant to help visitors quickly understand both technical depth and research direction."
   },
   "cv": {
-    "contactNote": "Email is the best way to reach out about research collaboration, talks, postdoctoral opportunities, or applied robotics and AI systems work."
+    "contactNote": "Email is the best way to reach out about research collaboration, talks, postdoctoral opportunities, or applied robotics and AI systems work.",
+    "pageTitle": "Academic CV and research profile.",
+    "pageLead": "A structured academic profile generated from the same data that powers the website, so updates to publications, projects, appointments, and contact details stay aligned."
   },
   "researchThemes": [
     {

@@ -23,8 +23,14 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Generate publication archive
-        run: node scripts/sync-publications.mjs
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Refresh generated content
+        env:
+          CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: npm run refresh:content
 
       - name: Commit updated archive
         run: |
@@ -34,6 +40,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publications-source.bib assets/data/publication-archive.json
-          git commit -m "chore: refresh publication archive"
+          git add data/publications-source.bib assets/data/publication-archive.json files/Shuo_SUN_CV.pdf
+          git commit -m "chore: refresh publications and cv"
           git push
