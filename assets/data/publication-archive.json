@@ -1,7 +1,49 @@
 {
-  "generatedAt": "2026-06-08",
+  "generatedAt": "2026-06-09",
   "source": "data/publications-source.bib + data/publication-overrides.json",
   "items": [
+    {
+      "id": "agi-elo-how-far-are-we-from-mastering-a-task-2026",
+      "title": "AGI-Elo: How Far Are We From Mastering A Task?",
+      "authors": "Shuo Sun and Yiming Zhao and C. D. W. Lee and Jiawei Sun and Chengran Yuan and Zefan Huang and Dongen Li and Justin K. W. Yeoh and Alok Prakash and Thomas Malone",
+      "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
+      "venue": "Advances in Neural Information Processing Systems 38",
+      "year": 2026,
+      "type": "conference",
+      "tags": [
+        "AGI evaluation",
+        "benchmarking",
+        "human-AI collective intelligence"
+      ],
+      "summary": "A current-facing evaluation paper that asks how close frontier models are to mastering real tasks, connecting capability measurement with practical deployment questions.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.12844"
+      },
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "roboatlas-mapping-the-global-robotics-landscape-2026",
+      "title": "RoboAtlas: Mapping the Global Robotics Landscape",
+      "authors": "Jiacheng Zhang and Shuo Sun and Vasiliki Charisi and Xinru Wang and Xinyue Chen and Zhexuan Ma and Alok Prakash and Thomas W. Malone",
+      "authorsShort": "J. Zhang, S. Sun, V. Charisi, X. Wang, X. Chen, et al.",
+      "venue": "ICRA 2026 Late Breaking Results",
+      "year": 2026,
+      "type": "conference",
+      "tags": [
+        "global robotics landscape",
+        "web-grounded analysis",
+        "robotics ecosystem"
+      ],
+      "summary": "A late-breaking result on mapping the global robotics landscape with structured, web-grounded analysis at robot-model scale rather than only company or market-report level.",
+      "links": {},
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
     {
       "id": "where-can-ai-be-used-2026",
       "title": "Where can AI be used? Insights from a deep ontology of work activities",
@@ -25,6 +67,50 @@
       "thumbnailAlt": ""
     },
     {
+      "id": "impact-2025",
+      "title": "IMPACT: Behavioral intention-aware multimodal trajectory prediction with adaptive context trimming",
+      "authors": "Jiawei Sun and Xinyu Yue and Jiahui Li and Ting Shen and Chengran Yuan and Shuo Sun and Shitong Guo and Qingwen Zhou and Marcelo H. Ang Jr.",
+      "authorsShort": "J. Sun, X. Yue, J. Li, T. Shen, C. Yuan, et al.",
+      "venue": "IEEE Robotics and Automation Letters",
+      "year": 2025,
+      "type": "journal",
+      "tags": [
+        "motion prediction",
+        "behavioral intention",
+        "autonomous systems"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2504.09103"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025",
+      "title": "PIE: Perception and Interaction Enhanced End-to-End Motion Planning for Autonomous Driving",
+      "authors": "Chengran Yuan and Zihan Lu and Zhaozheng Zhang and Yiming Zhao and Zefan Huang and Shuo Sun and Jiawei Sun and Jiahui Li and C. D. W. Lee and Marcelo H. Ang",
+      "authorsShort": "C. Yuan, Z. Lu, Z. Zhang, Y. Zhao, Z. Huang, et al.",
+      "venue": "arXiv",
+      "year": 2025,
+      "type": "preprint",
+      "tags": [
+        "end-to-end planning",
+        "autonomous driving",
+        "multimodal perception"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2509.18609"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
       "id": "rmp-yolo-2025",
       "title": "RMP-YOLO: A Robust Motion Predictor for Partially Observable Scenarios even if You Only Look Once",
       "authors": "Jiawei Sun and Jiahui Li and Tingchen Liu and Chengran Yuan and Shuo Sun and Zefan Huang and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
@@ -37,11 +123,97 @@
         "autonomous systems",
         "perception and planning"
       ],
-      "summary": "Robust motion prediction for partially observable scenarios, reflecting the continued systems and autonomy thread in the research portfolio.",
+      "summary": "",
       "links": {
         "arxiv": "https://arxiv.org/abs/2409.11696"
       },
       "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "adm-accelerated-diffusion-model-2024",
+      "title": "ADM: Accelerated diffusion model via estimated priors for robust motion prediction under uncertainties",
+      "authors": "Jiahui Li and Ting Shen and Zekai Gu and Jiawei Sun and Chengran Yuan and Yuhang Han and Shuo Sun and Marcelo H. Ang",
+      "authorsShort": "J. Li, T. Shen, Z. Gu, J. Sun, C. Yuan, et al.",
+      "venue": "ITSC 2024",
+      "year": 2024,
+      "type": "conference",
+      "tags": [
+        "diffusion models",
+        "motion prediction",
+        "autonomous systems"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2405.00797"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "computational-design-of-ultra-robust-strain-sensors-2024",
+      "title": "Computational design of ultra-robust strain sensors for soft robot perception and autonomy",
+      "authors": "H. Yang and S. Ding and J. Wang and Shuo Sun and R. Swaminathan and S. W. L. Ng and X. Pan and G. W. Ho",
+      "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
+      "venue": "Nature Communications",
+      "year": 2024,
+      "type": "journal",
+      "tags": [
+        "soft robotics",
+        "sensors",
+        "perception"
+      ],
+      "summary": "",
+      "links": {},
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "controlmtr-control-guided-motion-transformer-2024",
+      "title": "ControlMTR: Control-guided motion transformer with scene-compliant intention points for feasible motion prediction",
+      "authors": "Jiawei Sun and Chengran Yuan and Shuo Sun and Sha Wang and Yuhang Han and Shengnan Ma and Zefan Huang and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
+      "authorsShort": "J. Sun, C. Yuan, S. Sun, S. Wang, Y. Han, et al.",
+      "venue": "ITSC 2024",
+      "year": 2024,
+      "type": "conference",
+      "tags": [
+        "motion prediction",
+        "autonomous systems",
+        "transformers"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2404.10295"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024",
+      "title": "DRAMA: An efficient end-to-end motion planner for autonomous driving with mamba",
+      "authors": "Chengran Yuan and Zhaozheng Zhang and Jiawei Sun and Shuo Sun and Zefan Huang and C. D. W. Lee and Dongen Li and Yuhang Han and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
+      "authorsShort": "C. Yuan, Z. Zhang, J. Sun, S. Sun, Z. Huang, et al.",
+      "venue": "arXiv",
+      "year": 2024,
+      "type": "preprint",
+      "tags": [
+        "end-to-end planning",
+        "autonomous driving",
+        "foundation models"
+      ],
+      "summary": "A current-facing autonomy paper on end-to-end motion planning, showing how sequence-modeling advances can be adapted to real driving decision-making.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2408.03601"
+      },
+      "featured": true,
       "hidden": false,
       "thumbnail": "",
       "thumbnailAlt": ""
@@ -71,6 +243,48 @@
       "thumbnailAlt": ""
     },
     {
+      "id": "adaptive-local-context-extraction-2023",
+      "title": "An Adaptive Local Context Extraction Method for Motion Prediction and Planning",
+      "authors": "Jiawei Sun and Ting Liu and Chengran Yuan and Shuo Sun and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
+      "authorsShort": "J. Sun, T. Liu, C. Yuan, S. Sun, A. Wong, et al.",
+      "venue": "IEEE Conference on Cybernetics and Intelligent Systems 2023",
+      "year": 2023,
+      "type": "conference",
+      "tags": [
+        "motion prediction",
+        "planning",
+        "autonomous systems"
+      ],
+      "summary": "",
+      "links": {},
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "carla-loc-2023",
+      "title": "CARLA-Loc: synthetic SLAM dataset with full-stack sensor setup in challenging weather and dynamic environments",
+      "authors": "Yuhang Han and Zhiyang Liu and Shuo Sun and Dongen Li and Jiawei Sun and Chengran Yuan and Marcelo H. Ang Jr.",
+      "authorsShort": "Y. Han, Z. Liu, S. Sun, D. Li, J. Sun, et al.",
+      "venue": "arXiv",
+      "year": 2023,
+      "type": "preprint",
+      "tags": [
+        "datasets",
+        "slam",
+        "localization"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2309.08909"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
       "id": "fiss-plus-2023",
       "title": "FISS+: Efficient and Focused Trajectory Generation and Refinement using Fast Iterative Search and Sampling Strategy",
       "authors": "Shuo Sun and Jie Chen and Jiawei Sun and Chengran Yuan and Yuanchen Li and Tangyike Zhang and Marcelo H. Ang",
@@ -93,6 +307,28 @@
       "thumbnailAlt": ""
     },
     {
+      "id": "get-dipp-2023",
+      "title": "GET-DIPP: Graph-embedded transformer for differentiable integrated prediction and planning",
+      "authors": "Jiawei Sun and Chengran Yuan and Shuo Sun and Zhiyang Liu and Tiong Goh and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
+      "authorsShort": "J. Sun, C. Yuan, S. Sun, Z. Liu, T. Goh, et al.",
+      "venue": "ICCCR 2023",
+      "year": 2023,
+      "type": "conference",
+      "tags": [
+        "integrated planning",
+        "motion prediction",
+        "graph learning"
+      ],
+      "summary": "",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2211.06031"
+      },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
       "id": "maxent-irl-frenet-2023",
       "title": "Maximum Entropy Inverse Reinforcement Learning Based on Frenet Frame Sampling for Human-like Autonomous Driving",
       "authors": "Tangyike Zhang and Shuo Sun and Jiamin Shi and Shitao Chen and Marcelo H. Ang and Jingmin Xin and Nanning Zheng",
@@ -105,7 +341,7 @@
         "inverse reinforcement learning",
         "motion planning"
       ],
-      "summary": "A planning-oriented study on learning reward functions that reflect human driving tendencies in multi-lane scenarios.",
+      "summary": "",
       "links": {},
       "featured": false,
       "hidden": false,
@@ -125,10 +361,30 @@
         "field deployment",
         "autonomous systems"
       ],
-      "summary": "A systems paper focused on an autonomous cleaning platform deployed across varied real-world environments.",
+      "summary": "",
       "links": {
         "paper": "https://ieeexplore.ieee.org/document/10053582"
       },
+      "featured": false,
+      "hidden": false,
+      "thumbnail": "",
+      "thumbnailAlt": ""
+    },
+    {
+      "id": "effect-of-3d-object-removal-2022",
+      "title": "Exploring the effect of 3D object removal using deep learning for LiDAR-based mapping and long-term vehicular localization",
+      "authors": "Yiming Chen and Shuo Sun and Huan Yin and Marcelo H. Ang",
+      "authorsShort": "Y. Chen, S. Sun, H. Yin, M. H. Ang",
+      "venue": "ITSC 2022",
+      "year": 2022,
+      "type": "conference",
+      "tags": [
+        "lidar mapping",
+        "localization",
+        "perception"
+      ],
+      "summary": "",
+      "links": {},
       "featured": false,
       "hidden": false,
       "thumbnail": "",
@@ -147,12 +403,12 @@
         "trajectory optimization",
         "autonomous driving"
       ],
-      "summary": "A core planning paper in the portfolio, showing the algorithmic groundwork behind later systems and simulation work.",
+      "summary": "",
       "links": {
         "paper": "https://ieeexplore.ieee.org/document/9833251",
         "code": "https://github.com/SS47816/fiss_planner"
       },
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "thumbnail": "",
       "thumbnailAlt": ""

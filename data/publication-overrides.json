@@ -1,4 +1,186 @@
 {
+  "computational-design-of-ultra-robust-strain-sensors-2024": {
+    "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "soft robotics",
+      "sensors",
+      "perception"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024": {
+    "authorsShort": "C. Yuan, Z. Zhang, J. Sun, S. Sun, Z. Huang, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "end-to-end planning",
+      "autonomous driving",
+      "foundation models"
+    ],
+    "summary": "A current-facing autonomy paper on end-to-end motion planning, showing how sequence-modeling advances can be adapted to real driving decision-making.",
+    "featured": true
+  },
+  "drivescenegen-2024": {
+    "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "generative simulation",
+      "scenario generation",
+      "autonomous systems"
+    ],
+    "summary": "A generative simulation paper that broadens the portfolio beyond planning into the creation of diverse and realistic scenarios for autonomy development.",
+    "featured": true
+  },
+  "fiss-2022": {
+    "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion planning",
+      "trajectory optimization",
+      "autonomous driving"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "controlmtr-control-guided-motion-transformer-2024": {
+    "authorsShort": "J. Sun, C. Yuan, S. Sun, S. Wang, Y. Han, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion prediction",
+      "autonomous systems",
+      "transformers"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "carla-loc-2023": {
+    "authorsShort": "Y. Han, Z. Liu, S. Sun, D. Li, J. Sun, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "datasets",
+      "slam",
+      "localization"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "rmp-yolo-2025": {
+    "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion prediction",
+      "autonomous systems",
+      "perception and planning"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "fiss-plus-2023": {
+    "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion planning",
+      "trajectory generation",
+      "autonomous systems"
+    ],
+    "summary": "A coarse-to-fine planning framework that reinforces the technical foundation of efficient real-time trajectory generation.",
+    "featured": true
+  },
+  "effect-of-3d-object-removal-2022": {
+    "authorsShort": "Y. Chen, S. Sun, H. Yin, M. H. Ang",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "lidar mapping",
+      "localization",
+      "perception"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "adm-accelerated-diffusion-model-2024": {
+    "authorsShort": "J. Li, T. Shen, Z. Gu, J. Sun, C. Yuan, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "diffusion models",
+      "motion prediction",
+      "autonomous systems"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "get-dipp-2023": {
+    "authorsShort": "J. Sun, C. Yuan, S. Sun, Z. Liu, T. Goh, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "integrated planning",
+      "motion prediction",
+      "graph learning"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "impact-2025": {
+    "authorsShort": "J. Sun, X. Yue, J. Li, T. Shen, C. Yuan, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion prediction",
+      "behavioral intention",
+      "autonomous systems"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "autonomous-research-platform-cleaning-2022": {
+    "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "robotics platform",
+      "field deployment",
+      "autonomous systems"
+    ],
+    "summary": "",
+    "featured": false
+  },
+  "adaptive-local-context-extraction-2023": {
+    "authorsShort": "J. Sun, T. Liu, C. Yuan, S. Sun, A. Wong, et al.",
+    "hidden": false,
+    "thumbnail": "",
+    "thumbnailAlt": "",
+    "tags": [
+      "motion prediction",
+      "planning",
+      "autonomous systems"
+    ],
+    "summary": "",
+    "featured": false
+  },
   "where-can-ai-be-used-2026": {
     "authorsShort": "A. Cai, I. YeckehZaare, S. Sun, V. Charisi, X. Wang, et al.",
     "venue": "arXiv",
@@ -14,53 +196,21 @@
     "summary": "A current-facing paper that reflects the move toward understanding where AI can productively augment human work through a structured ontology of activities.",
     "featured": true
   },
-  "rmp-yolo-2025": {
-    "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
-    "venue": "ICRA 2025",
-    "type": "conference",
+  "pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025": {
+    "authorsShort": "C. Yuan, Z. Lu, Z. Zhang, Y. Zhao, Z. Huang, et al.",
     "hidden": false,
     "thumbnail": "",
     "thumbnailAlt": "",
     "tags": [
-      "motion prediction",
-      "autonomous systems",
-      "perception and planning"
+      "end-to-end planning",
+      "autonomous driving",
+      "multimodal perception"
     ],
-    "summary": "Robust motion prediction for partially observable scenarios, reflecting the continued systems and autonomy thread in the research portfolio.",
+    "summary": "",
     "featured": false
-  },
-  "drivescenegen-2024": {
-    "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
-    "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
-    "tags": [
-      "generative simulation",
-      "scenario generation",
-      "autonomous systems"
-    ],
-    "summary": "A generative simulation paper that broadens the portfolio beyond planning into the creation of diverse and realistic scenarios for autonomy development.",
-    "featured": true
-  },
-  "fiss-plus-2023": {
-    "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
-    "venue": "IROS 2023",
-    "type": "conference",
-    "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
-    "tags": [
-      "motion planning",
-      "trajectory generation",
-      "autonomous systems"
-    ],
-    "summary": "A coarse-to-fine planning framework that reinforces the technical foundation of efficient real-time trajectory generation.",
-    "featured": true
   },
   "maxent-irl-frenet-2023": {
     "authorsShort": "T. Zhang, S. Sun, J. Shi, S. Chen, M. H. Ang, et al.",
-    "venue": "ITSC 2023",
-    "type": "conference",
     "hidden": false,
     "thumbnail": "",
     "thumbnailAlt": "",
@@ -69,35 +219,33 @@
       "inverse reinforcement learning",
       "motion planning"
     ],
-    "summary": "A planning-oriented study on learning reward functions that reflect human driving tendencies in multi-lane scenarios.",
+    "summary": "",
     "featured": false
   },
-  "fiss-2022": {
-    "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
+  "agi-elo-how-far-are-we-from-mastering-a-task-2026": {
+    "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
     "hidden": false,
     "thumbnail": "",
     "thumbnailAlt": "",
     "tags": [
-      "motion planning",
-      "trajectory optimization",
-      "autonomous driving"
+      "AGI evaluation",
+      "benchmarking",
+      "human-AI collective intelligence"
     ],
-    "summary": "A core planning paper in the portfolio, showing the algorithmic groundwork behind later systems and simulation work.",
+    "summary": "A current-facing evaluation paper that asks how close frontier models are to mastering real tasks, connecting capability measurement with practical deployment questions.",
     "featured": true
   },
-  "autonomous-research-platform-cleaning-2022": {
-    "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
-    "venue": "ICARCV 2022",
-    "type": "conference",
+  "roboatlas-mapping-the-global-robotics-landscape-2026": {
+    "authorsShort": "J. Zhang, S. Sun, V. Charisi, X. Wang, X. Chen, et al.",
     "hidden": false,
     "thumbnail": "",
     "thumbnailAlt": "",
     "tags": [
-      "robotics platform",
-      "field deployment",
-      "autonomous systems"
+      "global robotics landscape",
+      "web-grounded analysis",
+      "robotics ecosystem"
     ],
-    "summary": "A systems paper focused on an autonomous cleaning platform deployed across varied real-world environments.",
-    "featured": false
+    "summary": "A late-breaking result on mapping the global robotics landscape with structured, web-grounded analysis at robot-model scale rather than only company or market-report level.",
+    "featured": true
   }
 }

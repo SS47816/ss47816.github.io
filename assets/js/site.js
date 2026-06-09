@@ -58,7 +58,11 @@ function renderPublicationLinks(links = {}) {
 
   return items
     .filter(([key]) => links[key])
-    .map(([key, label], index) => renderButtonLink(links[key], label, index === 0 ? "primary" : "secondary"))
+    .map(([key, label]) => {
+      const href = escapeHtml(links[key]);
+      const attrs = linkAttributes(links[key]);
+      return `<a class="pub-link" href="${href}" ${attrs}>${escapeHtml(label)}</a>`;
+    })
     .join("");
 }
 
@@ -222,36 +226,24 @@ function renderPublicationThumbnail(item) {
     `;
   }
 
-  const initials = item.title
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0] || "")
-    .join("")
-    .toUpperCase();
-
-  return `
-    <div class="pub-thumb placeholder" aria-hidden="true">
-      <span>${escapeHtml(initials || "PA")}</span>
-    </div>
-  `;
+  return '<div class="pub-thumb placeholder" aria-hidden="true"></div>';
 }
 
 function renderPublicationEntry(item, index) {
   return `
-    <article class="pub-entry">
-      <span class="pub-num">${String(index + 1).padStart(2, "0")}</span>
+    <article class="pub">
+      <span class="pn">${String(index + 1).padStart(2, "0")}</span>
       ${renderPublicationThumbnail(item)}
-      <div class="pub-main">
-        <h3 class="pub-title">${escapeHtml(item.title)}</h3>
-        <p class="pub-authors">${escapeHtml(item.authorsShort)}</p>
-        ${item.summary ? `<p class="pub-summary">${escapeHtml(item.summary)}</p>` : ""}
+      <div class="pt">
+        <strong>${escapeHtml(item.title)}</strong>
+        <span class="auth">${escapeHtml(item.authorsShort)}</span>
         ${renderTagRow(item.tags)}
         <div class="link-row">${renderPublicationLinks(item.links)}</div>
       </div>
-      <div class="pub-meta">
-        <span class="pub-meta-line">${escapeHtml(item.venue)}</span>
-        <span class="pub-meta-line pub-year">${escapeHtml(item.year || "—")}</span>
-        <span class="pub-meta-line pub-type">${escapeHtml(item.type)}</span>
+      <div class="ven">
+        ${escapeHtml(item.venue)}
+        <span class="yr">${escapeHtml(item.year || "—")}</span>
+        <span class="star">${escapeHtml(item.type)}</span>
       </div>
     </article>
   `;
@@ -313,9 +305,11 @@ function renderProjectMedia(project) {
 }
 
 function renderHomeProjects(site) {
-  return site.projects
-    .filter((project) => project.featured)
-    .slice(0, 3)
+  const featuredTitles = ["Autonomous Mini-bus", "Autonomous Road Sweeper", "Autonomous Golf Buggies"];
+
+  return featuredTitles
+    .map((title) => site.projects.find((project) => project.title === title))
+    .filter(Boolean)
     .map((project) => {
       const mediaMarkup =
         project.title === "Autonomous Mini-bus"
@@ -406,6 +400,7 @@ function renderProjects(site) {
       <div class="wrap">
         <div class="project-list-grid">
           ${site.projects
+            .filter((project) => project.title !== "DriveSceneGen")
             .map(
               (project) => `
                 <article class="project-detail ${project.featured ? "featured" : ""} reveal">

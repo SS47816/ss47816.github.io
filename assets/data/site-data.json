@@ -29,23 +29,23 @@
       "id": "smart",
       "name": "SMART",
       "subtitle": "Postdoctoral Associate · M3S IRG",
-      "logo": "assets/images/logos/smart.svg",
+      "logo": "assets/images/logos/smart.png",
       "logoAlt": "SMART wordmark",
       "url": "https://smart.mit.edu/"
     },
     {
       "id": "mit-cci",
-      "name": "MIT CCI",
+      "name": "MIT",
       "subtitle": "Center for Collective Intelligence",
-      "logo": "assets/images/logos/mit-cci.svg",
-      "logoAlt": "MIT Center for Collective Intelligence wordmark",
+      "logo": "assets/images/logos/mit.svg",
+      "logoAlt": "MIT wordmark",
       "url": "https://cci.mit.edu/"
     },
     {
       "id": "nus",
       "name": "NUS",
       "subtitle": "Ph.D. & B.Eng., Mechanical Engineering",
-      "logo": "assets/images/logos/nus.svg",
+      "logo": "assets/images/logos/nus.png",
       "logoAlt": "National University of Singapore wordmark",
       "url": "https://www.nus.edu.sg/"
     }
@@ -57,10 +57,12 @@
     "researchSummary": "The site foregrounds the present arc: from autonomous systems and motion planning toward intelligent systems that coordinate, support, and amplify human work.",
     "missionTitle": "Design intelligent systems that expand what people and teams can do.",
     "featuredPublicationIds": [
+      "roboatlas-mapping-the-global-robotics-landscape-2026",
       "where-can-ai-be-used-2026",
+      "agi-elo-how-far-are-we-from-mastering-a-task-2026",
+      "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024",
       "drivescenegen-2024",
-      "fiss-plus-2023",
-      "fiss-2022"
+      "fiss-plus-2023"
     ],
     "contactPrompt": "If you are working on robotics, autonomy, collective intelligence, AI-enabled labor, or adjacent human-centered systems research, feel free to reach out.",
     "currentLensTitle": "What the site should make obvious",
