@@ -8,7 +8,8 @@
       "authors": "Shuo Sun and Yiming Zhao and C. D. W. Lee and Jiawei Sun and Chengran Yuan and Zefan Huang and Dongen Li and Justin K. W. Yeoh and Alok Prakash and Thomas Malone",
       "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
       "venue": "Advances in Neural Information Processing Systems 38",
-      "year": 2026,
+      "venueShort": "NeurIPS 2025",
+      "year": 2025,
       "type": "conference",
       "tags": [
         "AGI evaluation",
@@ -21,8 +22,9 @@
       },
       "featured": true,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/agi-elo-how-far-are-we-from-mastering-a-task-2026.png",
+      "thumbnailAlt": "AGI-Elo: How Far Are We From Mastering A Task? graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "roboatlas-mapping-the-global-robotics-landscape-2026",
@@ -30,6 +32,7 @@
       "authors": "Jiacheng Zhang and Shuo Sun and Vasiliki Charisi and Xinru Wang and Xinyue Chen and Zhexuan Ma and Alok Prakash and Thomas W. Malone",
       "authorsShort": "J. Zhang, S. Sun, V. Charisi, X. Wang, X. Chen, et al.",
       "venue": "ICRA 2026 Late Breaking Results",
+      "venueShort": "ICRA 2026 LBR",
       "year": 2026,
       "type": "conference",
       "tags": [
@@ -42,7 +45,12 @@
       "featured": true,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": [
+        "Jiacheng Zhang",
+        "Shuo Sun",
+        "Vasiliki Charisi"
+      ]
     },
     {
       "id": "where-can-ai-be-used-2026",
@@ -50,6 +58,7 @@
       "authors": "Alice Cai and Iman YeckehZaare and Shuo Sun and Vasiliki Charisi and Xinru Wang and Aiman Imran and Robert Laubacher and Alok Prakash and Thomas Malone",
       "authorsShort": "A. Cai, I. YeckehZaare, S. Sun, V. Charisi, X. Wang, et al.",
       "venue": "arXiv",
+      "venueShort": "arXiv",
       "year": 2026,
       "type": "preprint",
       "tags": [
@@ -64,7 +73,13 @@
       "featured": true,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": [
+        "Alice Cai",
+        "Iman YeckehZaare",
+        "Shuo Sun",
+        "Vasiliki Charisi"
+      ]
     },
     {
       "id": "impact-2025",
@@ -72,6 +87,7 @@
       "authors": "Jiawei Sun and Xinyu Yue and Jiahui Li and Ting Shen and Chengran Yuan and Shuo Sun and Shitong Guo and Qingwen Zhou and Marcelo H. Ang Jr.",
       "authorsShort": "J. Sun, X. Yue, J. Li, T. Shen, C. Yuan, et al.",
       "venue": "IEEE Robotics and Automation Letters",
+      "venueShort": "IEEE RA-L",
       "year": 2025,
       "type": "journal",
       "tags": [
@@ -85,8 +101,9 @@
       },
       "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/impact-2025.png",
+      "thumbnailAlt": "IMPACT: Behavioral intention-aware multimodal trajectory prediction with adaptive context trimming graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025",
@@ -94,6 +111,7 @@
       "authors": "Chengran Yuan and Zihan Lu and Zhaozheng Zhang and Yiming Zhao and Zefan Huang and Shuo Sun and Jiawei Sun and Jiahui Li and C. D. W. Lee and Marcelo H. Ang",
       "authorsShort": "C. Yuan, Z. Lu, Z. Zhang, Y. Zhao, Z. Huang, et al.",
       "venue": "arXiv",
+      "venueShort": "arXiv",
       "year": 2025,
       "type": "preprint",
       "tags": [
@@ -107,8 +125,9 @@
       },
       "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025.png",
+      "thumbnailAlt": "PIE: Perception and Interaction Enhanced End-to-End Motion Planning for Autonomous Driving graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "rmp-yolo-2025",
@@ -116,6 +135,7 @@
       "authors": "Jiawei Sun and Jiahui Li and Tingchen Liu and Chengran Yuan and Shuo Sun and Zefan Huang and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
       "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
       "venue": "ICRA 2025",
+      "venueShort": "ICRA 2025",
       "year": 2025,
       "type": "conference",
       "tags": [
@@ -129,8 +149,9 @@
       },
       "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/rmp-yolo-2025.png",
+      "thumbnailAlt": "RMP-YOLO: A Robust Motion Predictor for Partially Observable Scenarios even if You Only Look Once graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "adm-accelerated-diffusion-model-2024",
@@ -138,6 +159,7 @@
       "authors": "Jiahui Li and Ting Shen and Zekai Gu and Jiawei Sun and Chengran Yuan and Yuhang Han and Shuo Sun and Marcelo H. Ang",
       "authorsShort": "J. Li, T. Shen, Z. Gu, J. Sun, C. Yuan, et al.",
       "venue": "ITSC 2024",
+      "venueShort": "ITSC 2024",
       "year": 2024,
       "type": "conference",
       "tags": [
@@ -151,8 +173,9 @@
       },
       "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/adm-accelerated-diffusion-model-2024.png",
+      "thumbnailAlt": "ADM: Accelerated diffusion model via estimated priors for robust motion prediction under uncertainties graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "computational-design-of-ultra-robust-strain-sensors-2024",
@@ -160,6 +183,7 @@
       "authors": "H. Yang and S. Ding and J. Wang and Shuo Sun and R. Swaminathan and S. W. L. Ng and X. Pan and G. W. Ho",
       "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
       "venue": "Nature Communications",
+      "venueShort": "Nature Communications",
       "year": 2024,
       "type": "journal",
       "tags": [
@@ -167,12 +191,13 @@
         "sensors",
         "perception"
       ],
-      "summary": "",
+      "summary": "A Nature Communications paper on ultra-robust strain sensing for soft robot perception and autonomy, connecting materials innovation with embodied intelligence.",
       "links": {},
-      "featured": false,
+      "featured": true,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "controlmtr-control-guided-motion-transformer-2024",
@@ -180,6 +205,7 @@
       "authors": "Jiawei Sun and Chengran Yuan and Shuo Sun and Sha Wang and Yuhang Han and Shengnan Ma and Zefan Huang and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
       "authorsShort": "J. Sun, C. Yuan, S. Sun, S. Wang, Y. Han, et al.",
       "venue": "ITSC 2024",
+      "venueShort": "ITSC 2024",
       "year": 2024,
       "type": "conference",
       "tags": [
@@ -193,8 +219,9 @@
       },
       "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/controlmtr-control-guided-motion-transformer-2024.png",
+      "thumbnailAlt": "ControlMTR: Control-guided motion transformer with scene-compliant intention points for feasible motion prediction graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024",
@@ -202,6 +229,7 @@
       "authors": "Chengran Yuan and Zhaozheng Zhang and Jiawei Sun and Shuo Sun and Zefan Huang and C. D. W. Lee and Dongen Li and Yuhang Han and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
       "authorsShort": "C. Yuan, Z. Zhang, J. Sun, S. Sun, Z. Huang, et al.",
       "venue": "arXiv",
+      "venueShort": "arXiv",
       "year": 2024,
       "type": "preprint",
       "tags": [
@@ -213,10 +241,11 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2408.03601"
       },
-      "featured": true,
+      "featured": false,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024.png",
+      "thumbnailAlt": "DRAMA: An efficient end-to-end motion planner for autonomous driving with mamba graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "drivescenegen-2024",
@@ -224,6 +253,7 @@
       "authors": "Shuo Sun and Zekai Gu and Tianchen Sun and Jiawei Sun and Chengran Yuan and Yuhang Han and Dongen Li and Marcelo H. Ang Jr.",
       "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
       "venue": "IEEE Robotics and Automation Letters",
+      "venueShort": "IEEE RA-L",
       "year": 2024,
       "type": "journal",
       "tags": [
@@ -239,8 +269,13 @@
       },
       "featured": true,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnail": "assets/images/publications/drivescenegen-2024.png",
+      "thumbnailAlt": "DriveSceneGen: Generating Diverse and Realistic Driving Scenarios From Scratch graphical abstract",
+      "equalContribution": [
+        "Shuo Sun",
+        "Zekai Gu",
+        "Tianchen Sun"
+      ]
     },
     {
       "id": "adaptive-local-context-extraction-2023",
@@ -248,6 +283,7 @@
       "authors": "Jiawei Sun and Ting Liu and Chengran Yuan and Shuo Sun and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
       "authorsShort": "J. Sun, T. Liu, C. Yuan, S. Sun, A. Wong, et al.",
       "venue": "IEEE Conference on Cybernetics and Intelligent Systems 2023",
+      "venueShort": "IEEE CIS-RAM 2023",
       "year": 2023,
       "type": "conference",
       "tags": [
@@ -260,7 +296,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "carla-loc-2023",
@@ -268,6 +305,7 @@
       "authors": "Yuhang Han and Zhiyang Liu and Shuo Sun and Dongen Li and Jiawei Sun and Chengran Yuan and Marcelo H. Ang Jr.",
       "authorsShort": "Y. Han, Z. Liu, S. Sun, D. Li, J. Sun, et al.",
       "venue": "arXiv",
+      "venueShort": "arXiv",
       "year": 2023,
       "type": "preprint",
       "tags": [
@@ -282,7 +320,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "fiss-plus-2023",
@@ -290,6 +329,7 @@
       "authors": "Shuo Sun and Jie Chen and Jiawei Sun and Chengran Yuan and Yuanchen Li and Tangyike Zhang and Marcelo H. Ang",
       "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
       "venue": "IROS 2023",
+      "venueShort": "IROS 2023",
       "year": 2023,
       "type": "conference",
       "tags": [
@@ -301,10 +341,11 @@
       "links": {
         "paper": "https://ieeexplore.ieee.org/document/10341396"
       },
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "get-dipp-2023",
@@ -312,6 +353,7 @@
       "authors": "Jiawei Sun and Chengran Yuan and Shuo Sun and Zhiyang Liu and Tiong Goh and Anthony Wong and Keng Peng Tee and Marcelo H. Ang",
       "authorsShort": "J. Sun, C. Yuan, S. Sun, Z. Liu, T. Goh, et al.",
       "venue": "ICCCR 2023",
+      "venueShort": "ICCCR 2023",
       "year": 2023,
       "type": "conference",
       "tags": [
@@ -326,7 +368,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "maxent-irl-frenet-2023",
@@ -334,6 +377,7 @@
       "authors": "Tangyike Zhang and Shuo Sun and Jiamin Shi and Shitao Chen and Marcelo H. Ang and Jingmin Xin and Nanning Zheng",
       "authorsShort": "T. Zhang, S. Sun, J. Shi, S. Chen, M. H. Ang, et al.",
       "venue": "ITSC 2023",
+      "venueShort": "ITSC 2023",
       "year": 2023,
       "type": "conference",
       "tags": [
@@ -346,7 +390,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "autonomous-research-platform-cleaning-2022",
@@ -354,6 +399,7 @@
       "authors": "Shuo Sun and Tangyike Zhang and Zhihai Xiang and Yuhang Han and Dongen Li and Jianghao Li and Zhiyang Liu and Marcelo H. Ang",
       "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
       "venue": "ICARCV 2022",
+      "venueShort": "ICARCV 2022",
       "year": 2022,
       "type": "conference",
       "tags": [
@@ -368,7 +414,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "effect-of-3d-object-removal-2022",
@@ -376,6 +423,7 @@
       "authors": "Yiming Chen and Shuo Sun and Huan Yin and Marcelo H. Ang",
       "authorsShort": "Y. Chen, S. Sun, H. Yin, M. H. Ang",
       "venue": "ITSC 2022",
+      "venueShort": "ITSC 2022",
       "year": 2022,
       "type": "conference",
       "tags": [
@@ -388,7 +436,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     },
     {
       "id": "fiss-2022",
@@ -396,6 +445,7 @@
       "authors": "Shuo Sun and Zhiyang Liu and Huan Yin and Marcelo H. Ang",
       "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
       "venue": "IEEE Robotics and Automation Letters",
+      "venueShort": "IEEE RA-L",
       "year": 2022,
       "type": "journal",
       "tags": [
@@ -411,7 +461,8 @@
       "featured": false,
       "hidden": false,
       "thumbnail": "",
-      "thumbnailAlt": ""
+      "thumbnailAlt": "",
+      "equalContribution": []
     }
   ]
 }

@@ -60,9 +60,8 @@
       "roboatlas-mapping-the-global-robotics-landscape-2026",
       "where-can-ai-be-used-2026",
       "agi-elo-how-far-are-we-from-mastering-a-task-2026",
-      "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024",
-      "drivescenegen-2024",
-      "fiss-plus-2023"
+      "computational-design-of-ultra-robust-strain-sensors-2024",
+      "drivescenegen-2024"
     ],
     "contactPrompt": "If you are working on robotics, autonomy, collective intelligence, AI-enabled labor, or adjacent human-centered systems research, feel free to reach out.",
     "currentLensTitle": "What the site should make obvious",
@@ -70,8 +69,8 @@
   },
   "publications": {
     "archiveNote": "The publication page uses a two-layer model: featured work receives editorial summaries and theme tags, while the full archive is generated from static source data so it remains scalable and reliable on GitHub Pages.",
-    "pageTitle": "Publications that connect autonomy, simulation, and human-centered intelligent systems.",
-    "pageLead": "This archive is designed for visitors who want a clear view of the research trajectory: real-world autonomy, generative simulation, and newer work on human-AI collective intelligence.",
+    "pageTitle": "Publications across autonomy, robotics, simulation, and collective intelligence.",
+    "pageLead": "This archive brings together my work on robotics, autonomous systems, and newer research on human-AI collective intelligence and AI-enabled work.",
     "pageCalloutTitle": "A living publication archive.",
     "pageCalloutBody": "Entries are synced from a Scholar-exported BibTeX source and then enriched locally with summaries, tags, links, and optional graphical abstracts.",
     "archiveCtaLabel": "All publications →"

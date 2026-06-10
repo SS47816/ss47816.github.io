@@ -229,6 +229,43 @@ function renderPublicationThumbnail(item) {
   return '<div class="pub-thumb placeholder" aria-hidden="true"></div>';
 }
 
+function normalizeAuthorName(value = "") {
+  return value.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function splitAuthors(authorField = "") {
+  return authorField
+    .split(/\s+and\s+/i)
+    .map((author) => author.trim())
+    .filter(Boolean);
+}
+
+function renderPublicationAuthors(item) {
+  const equalContribution = new Set((item.equalContribution || []).map((name) => normalizeAuthorName(name)));
+  const authors = splitAuthors(item.authors || item.authorsShort || "");
+
+  return authors
+    .map((author) => {
+      const safeAuthor = escapeHtml(author);
+      const label =
+        normalizeAuthorName(author) === "shuo sun" ? `<span class="author-self">${safeAuthor}</span>` : safeAuthor;
+      const marker = equalContribution.has(normalizeAuthorName(author))
+        ? '<sup class="eq-marker" title="Equal contribution">†</sup>'
+        : "";
+
+      return `${label}${marker}`;
+    })
+    .join(", ");
+}
+
+function renderPublicationVenue(item) {
+  return escapeHtml(item.venueShort || item.venue || "Unknown venue");
+}
+
+function hasEqualContribution(items = []) {
+  return items.some((item) => Array.isArray(item.equalContribution) && item.equalContribution.length);
+}
+
 function renderPublicationEntry(item, index) {
   return `
     <article class="pub">
@@ -236,12 +273,12 @@ function renderPublicationEntry(item, index) {
       ${renderPublicationThumbnail(item)}
       <div class="pt">
         <strong>${escapeHtml(item.title)}</strong>
-        <span class="auth">${escapeHtml(item.authorsShort)}</span>
+        <span class="auth">${renderPublicationAuthors(item)}</span>
         ${renderTagRow(item.tags)}
         <div class="link-row">${renderPublicationLinks(item.links)}</div>
       </div>
       <div class="ven">
-        ${escapeHtml(item.venue)}
+        ${renderPublicationVenue(item)}
         <span class="yr">${escapeHtml(item.year || "—")}</span>
         <span class="star">${escapeHtml(item.type)}</span>
       </div>
@@ -251,13 +288,16 @@ function renderPublicationEntry(item, index) {
 
 function renderPublicationStream(items, options = {}) {
   const { grouped = false } = options;
+  const equalContributionNote = hasEqualContribution(items)
+    ? '<p class="pub-stream-note">† equal contribution</p>'
+    : "";
 
   if (!items.length) {
     return '<div class="empty-state">No publications are available yet.</div>';
   }
 
   if (!grouped) {
-    return `<div class="pub-stream">${items.map((item, index) => renderPublicationEntry(item, index)).join("")}</div>`;
+    return `<div class="pub-stream">${items.map((item, index) => renderPublicationEntry(item, index)).join("")}</div>${equalContributionNote}`;
   }
 
   const groups = groupPublicationsByYear(items);
@@ -274,7 +314,8 @@ function renderPublicationStream(items, options = {}) {
         </section>
       `,
     )
-    .join("");
+    .join("")
+    .concat(equalContributionNote);
 }
 
 function renderProjectMedia(project) {
@@ -440,29 +481,11 @@ function renderPublications(site, archive) {
             <span class="eyebrow">Publications</span>
             <h1>${escapeHtml(site.publications.pageTitle)}</h1>
             <p class="lead">${escapeHtml(site.publications.pageLead)}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <div class="wrap">
-        <div class="callout-grid">
-          <article class="callout reveal">
-            <span class="eyebrow">Archive</span>
-            <h2>${escapeHtml(site.publications.pageCalloutTitle)}</h2>
-            <p>${escapeHtml(site.publications.pageCalloutBody)}</p>
-          </article>
-          <article class="callout reveal">
-            <span class="eyebrow">Source</span>
-            <h2>Scholar-synced, locally enriched.</h2>
-            <p><strong>Last generated:</strong> ${escapeHtml(archive.generatedAt)}</p>
-            <p><strong>Primary source:</strong> ${escapeHtml(archive.source)}</p>
-            <div class="link-row">
-              ${renderButtonLink(site.profile.links.googleScholar, "Scholar", "primary")}
-              ${renderButtonLink(site.profile.links.orcid, "ORCID")}
+            <div class="link-row page-hero-links">
+              ${renderButtonLink(site.profile.links.googleScholar, "Scholar", "secondary")}
+              ${renderButtonLink(site.profile.links.orcid, "ORCID", "secondary")}
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>

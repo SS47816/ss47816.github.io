@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "python3 -m http.server 8080",
     "sync:publications": "node scripts/sync-publications.mjs",
+    "fetch:thumbnails": "node scripts/fetch-publication-thumbnails.mjs",
     "build:cv": "node scripts/build-cv.mjs",
     "refresh:content": "npm run sync:publications && npm run build:cv"
   }

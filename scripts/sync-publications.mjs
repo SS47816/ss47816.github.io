@@ -149,7 +149,9 @@ function mergeEntries(current, incoming) {
     authorsShort:
       current.authorsShort.length >= incoming.authorsShort.length ? current.authorsShort : incoming.authorsShort,
     venue: current.venue !== "Unknown venue" ? current.venue : incoming.venue,
+    venueShort: current.venueShort || incoming.venueShort,
     links: mergedLinks,
+    equalContribution: current.equalContribution.length ? current.equalContribution : incoming.equalContribution,
   };
 
   return preferred;
@@ -185,6 +187,7 @@ async function main() {
       authors: entry.fields.author || "",
       authorsShort: override.authorsShort || shortenAuthors(entry.fields.author || ""),
       venue: override.venue || deriveVenue(entry.fields),
+      venueShort: override.venueShort || "",
       year: Number(entry.fields.year || 0),
       type: override.type || humanType(entry.entryType, entry.fields.type),
       tags: override.tags || [],
@@ -197,6 +200,7 @@ async function main() {
       hidden: Boolean(override.hidden),
       thumbnail: override.thumbnail || "",
       thumbnailAlt: override.thumbnailAlt || "",
+      equalContribution: Array.isArray(override.equalContribution) ? override.equalContribution : [],
     };
 
     if (deduped.has(key)) {

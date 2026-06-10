@@ -819,7 +819,20 @@ section.block,
   display: block;
   margin-top: 5px;
   font-size: 14px;
+  line-height: 1.65;
   color: var(--muted);
+}
+
+.pub .pt .auth .author-self {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.pub .pt .auth .eq-marker {
+  margin-left: 2px;
+  font-size: 0.72em;
+  line-height: 0;
+  color: var(--accent-ink);
 }
 
 .pub .tag-row {
@@ -893,6 +906,12 @@ section.block,
 .pub-stream {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+.pub-stream-note {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
 }
 
 .about-grid {
@@ -1137,6 +1156,11 @@ footer .up:hover {
   margin: 18px 0 0;
   font-size: 18px;
   line-height: 1.7;
+}
+
+.page-hero-links {
+  margin-top: 22px;
+  flex-wrap: wrap;
 }
 
 .callout-grid {

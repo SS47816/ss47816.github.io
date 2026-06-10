@@ -9,34 +9,37 @@
       "sensors",
       "perception"
     ],
-    "summary": "",
-    "featured": false
+    "summary": "A Nature Communications paper on ultra-robust strain sensing for soft robot perception and autonomy, connecting materials innovation with embodied intelligence.",
+    "featured": true,
+    "venueShort": "Nat Commun"
   },
   "drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024": {
     "authorsShort": "C. Yuan, Z. Zhang, J. Sun, S. Sun, Z. Huang, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/drama-an-efficient-end-to-end-motion-planner-for-autonomous-driving-with-mamba-2024.png",
+    "thumbnailAlt": "DRAMA: An efficient end-to-end motion planner for autonomous driving with mamba graphical abstract",
     "tags": [
       "end-to-end planning",
       "autonomous driving",
       "foundation models"
     ],
     "summary": "A current-facing autonomy paper on end-to-end motion planning, showing how sequence-modeling advances can be adapted to real driving decision-making.",
-    "featured": true
+    "featured": false,
+    "venueShort": "arXiv"
   },
   "drivescenegen-2024": {
     "authorsShort": "S. Sun, Z. Gu, T. Sun, J. Sun, C. Yuan, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/drivescenegen-2024.png",
+    "thumbnailAlt": "DriveSceneGen: Generating Diverse and Realistic Driving Scenarios From Scratch graphical abstract",
     "tags": [
       "generative simulation",
       "scenario generation",
       "autonomous systems"
     ],
     "summary": "A generative simulation paper that broadens the portfolio beyond planning into the creation of diverse and realistic scenarios for autonomy development.",
-    "featured": true
+    "featured": true,
+    "venueShort": "IEEE RA-L"
   },
   "fiss-2022": {
     "authorsShort": "S. Sun, Z. Liu, H. Yin, M. H. Ang",
@@ -49,20 +52,22 @@
       "autonomous driving"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "IEEE RA-L"
   },
   "controlmtr-control-guided-motion-transformer-2024": {
     "authorsShort": "J. Sun, C. Yuan, S. Sun, S. Wang, Y. Han, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/controlmtr-control-guided-motion-transformer-2024.png",
+    "thumbnailAlt": "ControlMTR: Control-guided motion transformer with scene-compliant intention points for feasible motion prediction graphical abstract",
     "tags": [
       "motion prediction",
       "autonomous systems",
       "transformers"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ITSC 2024"
   },
   "carla-loc-2023": {
     "authorsShort": "Y. Han, Z. Liu, S. Sun, D. Li, J. Sun, et al.",
@@ -75,20 +80,22 @@
       "localization"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "arXiv"
   },
   "rmp-yolo-2025": {
     "authorsShort": "J. Sun, J. Li, T. Liu, C. Yuan, S. Sun, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/rmp-yolo-2025.png",
+    "thumbnailAlt": "RMP-YOLO: A Robust Motion Predictor for Partially Observable Scenarios even if You Only Look Once graphical abstract",
     "tags": [
       "motion prediction",
       "autonomous systems",
       "perception and planning"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ICRA 2025"
   },
   "fiss-plus-2023": {
     "authorsShort": "S. Sun, J. Chen, J. Sun, C. Yuan, Y. Li, et al.",
@@ -101,7 +108,8 @@
       "autonomous systems"
     ],
     "summary": "A coarse-to-fine planning framework that reinforces the technical foundation of efficient real-time trajectory generation.",
-    "featured": true
+    "featured": false,
+    "venueShort": "IROS 2023"
   },
   "effect-of-3d-object-removal-2022": {
     "authorsShort": "Y. Chen, S. Sun, H. Yin, M. H. Ang",
@@ -114,20 +122,22 @@
       "perception"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ITSC 2022"
   },
   "adm-accelerated-diffusion-model-2024": {
     "authorsShort": "J. Li, T. Shen, Z. Gu, J. Sun, C. Yuan, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/adm-accelerated-diffusion-model-2024.png",
+    "thumbnailAlt": "ADM: Accelerated diffusion model via estimated priors for robust motion prediction under uncertainties graphical abstract",
     "tags": [
       "diffusion models",
       "motion prediction",
       "autonomous systems"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ITSC 2024"
   },
   "get-dipp-2023": {
     "authorsShort": "J. Sun, C. Yuan, S. Sun, Z. Liu, T. Goh, et al.",
@@ -140,20 +150,22 @@
       "graph learning"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ICCCR 2023"
   },
   "impact-2025": {
     "authorsShort": "J. Sun, X. Yue, J. Li, T. Shen, C. Yuan, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/impact-2025.png",
+    "thumbnailAlt": "IMPACT: Behavioral intention-aware multimodal trajectory prediction with adaptive context trimming graphical abstract",
     "tags": [
       "motion prediction",
       "behavioral intention",
       "autonomous systems"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "IEEE RA-L"
   },
   "autonomous-research-platform-cleaning-2022": {
     "authorsShort": "S. Sun, T. Zhang, Z. Xiang, Y. Han, D. Li, et al.",
@@ -166,7 +178,8 @@
       "autonomous systems"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ICARCV 2022"
   },
   "adaptive-local-context-extraction-2023": {
     "authorsShort": "J. Sun, T. Liu, C. Yuan, S. Sun, A. Wong, et al.",
@@ -179,7 +192,8 @@
       "autonomous systems"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "IEEE CIS 2023"
   },
   "where-can-ai-be-used-2026": {
     "authorsShort": "A. Cai, I. YeckehZaare, S. Sun, V. Charisi, X. Wang, et al.",
@@ -194,20 +208,22 @@
       "augmentation"
     ],
     "summary": "A current-facing paper that reflects the move toward understanding where AI can productively augment human work through a structured ontology of activities.",
-    "featured": true
+    "featured": true,
+    "venueShort": "arXiv"
   },
   "pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025": {
     "authorsShort": "C. Yuan, Z. Lu, Z. Zhang, Y. Zhao, Z. Huang, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/pie-perception-and-interaction-enhanced-end-to-end-motion-planning-2025.png",
+    "thumbnailAlt": "PIE: Perception and Interaction Enhanced End-to-End Motion Planning for Autonomous Driving graphical abstract",
     "tags": [
       "end-to-end planning",
       "autonomous driving",
       "multimodal perception"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "arXiv"
   },
   "maxent-irl-frenet-2023": {
     "authorsShort": "T. Zhang, S. Sun, J. Shi, S. Chen, M. H. Ang, et al.",
@@ -220,20 +236,22 @@
       "motion planning"
     ],
     "summary": "",
-    "featured": false
+    "featured": false,
+    "venueShort": "ITSC 2023"
   },
   "agi-elo-how-far-are-we-from-mastering-a-task-2026": {
     "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/agi-elo-how-far-are-we-from-mastering-a-task-2026.png",
+    "thumbnailAlt": "AGI-Elo: How Far Are We From Mastering A Task? graphical abstract",
     "tags": [
       "AGI evaluation",
       "benchmarking",
       "human-AI collective intelligence"
     ],
     "summary": "A current-facing evaluation paper that asks how close frontier models are to mastering real tasks, connecting capability measurement with practical deployment questions.",
-    "featured": true
+    "featured": true,
+    "venueShort": "NeurIPS 2026"
   },
   "roboatlas-mapping-the-global-robotics-landscape-2026": {
     "authorsShort": "J. Zhang, S. Sun, V. Charisi, X. Wang, X. Chen, et al.",
@@ -246,6 +264,12 @@
       "robotics ecosystem"
     ],
     "summary": "A late-breaking result on mapping the global robotics landscape with structured, web-grounded analysis at robot-model scale rather than only company or market-report level.",
-    "featured": true
+    "featured": true,
+    "venueShort": "ICRA 2026 LBR",
+    "equalContribution": [
+      "Jiacheng Zhang",
+      "Shuo Sun",
+      "Vasiliki Charisi"
+    ]
   }
 }
