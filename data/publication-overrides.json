@@ -10,7 +10,7 @@
       "robotics ecosystem"
     ],
     "summary": "A late-breaking result on mapping the global robotics landscape with structured, web-grounded analysis at robot-model scale rather than only company or market-report level.",
-    "featured": true,
+    "featured": false,
     "venueShort": "ICRA 2026 LBR",
     "equalContribution": [
       "Jiacheng Zhang",
@@ -345,7 +345,7 @@
       "autonomous driving"
     ],
     "summary": "",
-    "featured": false,
+    "featured": true,
     "venueShort": "IEEE RA-L",
     "links": {
       "paper": "https://ieeexplore.ieee.org/document/9833251",

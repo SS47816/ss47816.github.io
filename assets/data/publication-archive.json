@@ -18,7 +18,7 @@
       ],
       "summary": "A late-breaking result on mapping the global robotics landscape with structured, web-grounded analysis at robot-model scale rather than only company or market-report level.",
       "links": {},
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "thumbnail": "assets/images/publications/roboatlas-mapping-the-global-robotics-landscape-2026.png",
       "thumbnailAlt": "RoboAtlas: Mapping the Global Robotics Landscape graphical abstract",
@@ -477,7 +477,7 @@
         "paper": "https://ieeexplore.ieee.org/document/9833251",
         "code": "https://github.com/SS47816/fiss_planner"
       },
-      "featured": false,
+      "featured": true,
       "hidden": false,
       "thumbnail": "",
       "thumbnailAlt": "",
