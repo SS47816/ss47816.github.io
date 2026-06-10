@@ -34,6 +34,12 @@
     "summary": "A current-facing paper that reflects the move toward understanding where AI can productively augment human work through a structured ontology of activities.",
     "featured": true,
     "venueShort": "arXiv",
+    "equalContribution": [
+      "Alice Cai",
+      "Iman YeckehZaare",
+      "Shuo Sun",
+      "Vasiliki Charisi"
+    ],
     "links": {
       "project": "https://ontology.mit.edu/landing#paper",
       "arxiv": "https://arxiv.org/abs/2603.20619"
@@ -179,6 +185,11 @@
     "summary": "A generative simulation paper that broadens the portfolio beyond planning into the creation of diverse and realistic scenarios for autonomy development.",
     "featured": true,
     "venueShort": "IEEE RA-L",
+    "equalContribution": [
+      "Shuo Sun",
+      "Zekai Gu",
+      "Tianchen Sun"
+    ],
     "links": {
       "project": "https://ss47816.github.io/DriveSceneGen/",
       "paper": "https://doi.org/10.1109/LRA.2024.3416792",
@@ -189,8 +200,8 @@
   "computational-design-of-ultra-robust-strain-sensors-2024": {
     "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
     "hidden": false,
-    "thumbnail": "",
-    "thumbnailAlt": "",
+    "thumbnail": "assets/images/publications/computational-design-of-ultra-robust-strain-sensors-2024.png",
+    "thumbnailAlt": "Computational design of ultra-robust strain sensors for soft robot perception and autonomy graphical abstract",
     "tags": [
       "soft robotics",
       "sensors",

@@ -1,31 +1,7 @@
 {
-  "generatedAt": "2026-06-09",
+  "generatedAt": "2026-06-10",
   "source": "data/publications-source.bib + data/publication-overrides.json",
   "items": [
-    {
-      "id": "agi-elo-how-far-are-we-from-mastering-a-task-2026",
-      "title": "AGI-Elo: How Far Are We From Mastering A Task?",
-      "authors": "Shuo Sun and Yiming Zhao and C. D. W. Lee and Jiawei Sun and Chengran Yuan and Zefan Huang and Dongen Li and Justin K. W. Yeoh and Alok Prakash and Thomas Malone",
-      "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
-      "venue": "Advances in Neural Information Processing Systems 38",
-      "venueShort": "NeurIPS 2025",
-      "year": 2025,
-      "type": "conference",
-      "tags": [
-        "AGI evaluation",
-        "benchmarking",
-        "human-AI collective intelligence"
-      ],
-      "summary": "A current-facing evaluation paper that asks how close frontier models are to mastering real tasks, connecting capability measurement with practical deployment questions.",
-      "links": {
-        "arxiv": "https://arxiv.org/abs/2505.12844"
-      },
-      "featured": true,
-      "hidden": false,
-      "thumbnail": "assets/images/publications/agi-elo-how-far-are-we-from-mastering-a-task-2026.png",
-      "thumbnailAlt": "AGI-Elo: How Far Are We From Mastering A Task? graphical abstract",
-      "equalContribution": []
-    },
     {
       "id": "roboatlas-mapping-the-global-robotics-landscape-2026",
       "title": "RoboAtlas: Mapping the Global Robotics Landscape",
@@ -44,8 +20,8 @@
       "links": {},
       "featured": true,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": "",
+      "thumbnail": "assets/images/publications/roboatlas-mapping-the-global-robotics-landscape-2026.png",
+      "thumbnailAlt": "RoboAtlas: Mapping the Global Robotics Landscape graphical abstract",
       "equalContribution": [
         "Jiacheng Zhang",
         "Shuo Sun",
@@ -68,18 +44,47 @@
       ],
       "summary": "A current-facing paper that reflects the move toward understanding where AI can productively augment human work through a structured ontology of activities.",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2603.20619"
+        "arxiv": "https://arxiv.org/abs/2603.20619",
+        "project": "https://ontology.mit.edu/landing#paper"
       },
       "featured": true,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": "",
+      "thumbnail": "assets/images/publications/where-can-ai-be-used-2026.png",
+      "thumbnailAlt": "Where Can AI Be Used? A Structured Ontology of Human Activities for Understanding Productive Human-AI Augmentation graphical abstract",
       "equalContribution": [
         "Alice Cai",
         "Iman YeckehZaare",
         "Shuo Sun",
         "Vasiliki Charisi"
       ]
+    },
+    {
+      "id": "agi-elo-how-far-are-we-from-mastering-a-task-2025",
+      "title": "AGI-Elo: How Far Are We From Mastering A Task?",
+      "authors": "Shuo Sun and Yiming Zhao and C. D. W. Lee and Jiawei Sun and Chengran Yuan and Zefan Huang and Dongen Li and Justin K. W. Yeoh and Alok Prakash and Thomas Malone",
+      "authorsShort": "S. Sun, Y. Zhao, C. D. W. Lee, J. Sun, C. Yuan, et al.",
+      "venue": "Advances in Neural Information Processing Systems 38",
+      "venueShort": "NeurIPS 2025",
+      "year": 2025,
+      "type": "conference",
+      "tags": [
+        "AGI evaluation",
+        "benchmarking",
+        "human-AI collective intelligence"
+      ],
+      "summary": "A current-facing evaluation paper that asks how close frontier models are to mastering real tasks, connecting capability measurement with practical deployment questions.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.12844",
+        "project": "https://ss47816.github.io/AGI-Elo/",
+        "paper": "https://papers.nips.cc/paper_files/paper/2025/file/e854c805ca6fe0c6672d47d8318f78e8-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "code": "https://github.com/SS47816/AGI-Elo",
+        "huggingface": "https://huggingface.co/collections/ztony0712/agi-elo"
+      },
+      "featured": true,
+      "hidden": false,
+      "thumbnail": "assets/images/publications/agi-elo-how-far-are-we-from-mastering-a-task-2025.png",
+      "thumbnailAlt": "AGI-Elo: How Far Are We From Mastering A Task? graphical abstract",
+      "equalContribution": []
     },
     {
       "id": "impact-2025",
@@ -97,7 +102,8 @@
       ],
       "summary": "",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2504.09103"
+        "arxiv": "https://arxiv.org/abs/2504.09103",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/11260929"
       },
       "featured": false,
       "hidden": false,
@@ -145,7 +151,8 @@
       ],
       "summary": "",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2409.11696"
+        "arxiv": "https://arxiv.org/abs/2409.11696",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/11127743"
       },
       "featured": false,
       "hidden": false,
@@ -169,7 +176,8 @@
       ],
       "summary": "",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2405.00797"
+        "arxiv": "https://arxiv.org/abs/2405.00797",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/10919893"
       },
       "featured": false,
       "hidden": false,
@@ -180,7 +188,7 @@
     {
       "id": "computational-design-of-ultra-robust-strain-sensors-2024",
       "title": "Computational design of ultra-robust strain sensors for soft robot perception and autonomy",
-      "authors": "H. Yang and S. Ding and J. Wang and Shuo Sun and R. Swaminathan and S. W. L. Ng and X. Pan and G. W. Ho",
+      "authors": "Yang, Haitao and Ding, Shuo and Wang, Jiahao and Sun, Shuo and Swaminathan, Ruphan and Ng, Serene Wen Ling and Pan, Xinglong and Ho, Ghim Wei",
       "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
       "venue": "Nature Communications",
       "venueShort": "Nature Communications",
@@ -192,11 +200,13 @@
         "perception"
       ],
       "summary": "A Nature Communications paper on ultra-robust strain sensing for soft robot perception and autonomy, connecting materials innovation with embodied intelligence.",
-      "links": {},
+      "links": {
+        "paper": "https://www.nature.com/articles/s41467-024-45786-y"
+      },
       "featured": true,
       "hidden": false,
-      "thumbnail": "",
-      "thumbnailAlt": "",
+      "thumbnail": "assets/images/publications/computational-design-of-ultra-robust-strain-sensors-2024.png",
+      "thumbnailAlt": "Computational design of ultra-robust strain sensors for soft robot perception and autonomy graphical abstract",
       "equalContribution": []
     },
     {
@@ -215,7 +225,8 @@
       ],
       "summary": "",
       "links": {
-        "arxiv": "https://arxiv.org/abs/2404.10295"
+        "arxiv": "https://arxiv.org/abs/2404.10295",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/10919900"
       },
       "featured": false,
       "hidden": false,
@@ -265,7 +276,8 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2309.14685",
         "code": "https://github.com/SS47816/DriveSceneGen",
-        "paper": "https://doi.org/10.1109/LRA.2024.3416792"
+        "paper": "https://doi.org/10.1109/LRA.2024.3416792",
+        "project": "https://ss47816.github.io/DriveSceneGen/"
       },
       "featured": true,
       "hidden": false,
@@ -292,7 +304,9 @@
         "autonomous systems"
       ],
       "summary": "",
-      "links": {},
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/abstract/document/10370750"
+      },
       "featured": false,
       "hidden": false,
       "thumbnail": "",
@@ -339,7 +353,8 @@
       ],
       "summary": "A coarse-to-fine planning framework that reinforces the technical foundation of efficient real-time trajectory generation.",
       "links": {
-        "paper": "https://ieeexplore.ieee.org/document/10341396"
+        "paper": "https://ieeexplore.ieee.org/document/10341396",
+        "code": "https://github.com/SS47816/fiss_plus_planner"
       },
       "featured": false,
       "hidden": false,
@@ -386,7 +401,9 @@
         "motion planning"
       ],
       "summary": "",
-      "links": {},
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/abstract/document/10422525"
+      },
       "featured": false,
       "hidden": false,
       "thumbnail": "",
@@ -432,7 +449,9 @@
         "perception"
       ],
       "summary": "",
-      "links": {},
+      "links": {
+        "paper": "https://ieeexplore.ieee.org/abstract/document/9921969"
+      },
       "featured": false,
       "hidden": false,
       "thumbnail": "",

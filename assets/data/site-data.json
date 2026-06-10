@@ -59,7 +59,7 @@
     "featuredPublicationIds": [
       "roboatlas-mapping-the-global-robotics-landscape-2026",
       "where-can-ai-be-used-2026",
-      "agi-elo-how-far-are-we-from-mastering-a-task-2026",
+      "agi-elo-how-far-are-we-from-mastering-a-task-2025",
       "computational-design-of-ultra-robust-strain-sensors-2024",
       "drivescenegen-2024"
     ],
@@ -154,7 +154,7 @@
     },
     {
       "title": "Autonomous Mini-bus",
-      "org": "NUS · Tron-E · Turing Drive Taiwan",
+      "org": "NUS · Tron-E · Turing Drive",
       "period": "2023 - Present",
       "status": "Flagship Deployment",
       "summary": "Development of an autonomous mini-bus platform for on-demand shuttle services in geofenced environments.",
