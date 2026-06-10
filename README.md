@@ -353,7 +353,6 @@ This file is the single source of truth for:
 
 - project metadata
 - image paths and alt text
-- which projects appear on the home page
 - which projects appear on `projects.html`
 - which projects appear in the CV outputs
 
@@ -398,10 +397,11 @@ Example:
 
 `data/projects.json` also includes curated collections so ordering and inclusion stay out of the code:
 
-- `collections.home`
 - `collections.projectsPage`
 - `collections.cv`
 - `collections.academicCv`
+
+The home page is the one exception: it renders projects where `featured: true`, in file order.
 
 ## Editing Text Across the Site
 

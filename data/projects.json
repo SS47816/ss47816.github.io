@@ -115,12 +115,6 @@
     }
   ],
   "collections": {
-    "home": [
-      "human-ai-collective-intelligence",
-      "autonomous-mini-bus",
-      "autonomous-road-sweeper",
-      "autonomous-golf-buggies"
-    ],
     "projectsPage": [
       "human-ai-collective-intelligence",
       "autonomous-mini-bus",

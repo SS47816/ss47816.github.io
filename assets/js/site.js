@@ -359,7 +359,8 @@ function renderProjectMedia(project) {
 }
 
 function renderHomeProjects(projectData) {
-  return getProjectCollection(projectData, "home")
+  return ensureArray(projectData?.items)
+    .filter((project) => project.featured)
     .map((project) => {
       const mediaMarkup = project.image?.src
         ? `<img src="${escapeHtml(project.image.src)}" alt="${escapeHtml(project.image.alt)}" />`
