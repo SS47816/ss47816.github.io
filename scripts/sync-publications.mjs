@@ -113,6 +113,10 @@ function collectLinks(fields) {
   return links;
 }
 
+function isPlainObject(value) {
+  return value && typeof value === "object" && !Array.isArray(value);
+}
+
 function normalizeTitle(title = "") {
   return title
     .toLowerCase()
@@ -157,6 +161,47 @@ function mergeEntries(current, incoming) {
   return preferred;
 }
 
+function buildPublicationItem(entry, override) {
+  const base = {
+    id: entry.id,
+    title: entry.fields.title || entry.id,
+    authors: entry.fields.author || "",
+    authorsShort: shortenAuthors(entry.fields.author || ""),
+    venue: deriveVenue(entry.fields),
+    venueShort: "",
+    year: Number(entry.fields.year || 0),
+    type: humanType(entry.entryType, entry.fields.type),
+    tags: [],
+    summary: "",
+    links: collectLinks(entry.fields),
+    featured: false,
+    hidden: false,
+    thumbnail: "",
+    thumbnailAlt: "",
+    equalContribution: [],
+  };
+
+  return {
+    ...base,
+    ...override,
+    authorsShort: override.authorsShort ?? base.authorsShort,
+    venue: override.venue ?? base.venue,
+    venueShort: override.venueShort ?? base.venueShort,
+    type: override.type ?? base.type,
+    tags: Array.isArray(override.tags) ? override.tags : base.tags,
+    summary: typeof override.summary === "string" ? override.summary : base.summary,
+    links: {
+      ...base.links,
+      ...(isPlainObject(override.links) ? override.links : {}),
+    },
+    featured: Boolean(override.featured),
+    hidden: Boolean(override.hidden),
+    thumbnail: override.thumbnail ?? base.thumbnail,
+    thumbnailAlt: override.thumbnailAlt ?? base.thumbnailAlt,
+    equalContribution: Array.isArray(override.equalContribution) ? override.equalContribution : base.equalContribution,
+  };
+}
+
 async function main() {
   if (remoteSourceUrl) {
     const response = await fetch(remoteSourceUrl);
@@ -177,31 +222,17 @@ async function main() {
   const overrides = JSON.parse(overridesText);
   const entries = parseBibEntries(sourceText);
   const deduped = new Map();
+  const matchedOverrideIds = new Set();
 
   for (const entry of entries) {
     const key = dedupeKey(entry);
-    const override = overrides[entry.id] || {};
-    const item = {
-      id: entry.id,
-      title: entry.fields.title || entry.id,
-      authors: entry.fields.author || "",
-      authorsShort: override.authorsShort || shortenAuthors(entry.fields.author || ""),
-      venue: override.venue || deriveVenue(entry.fields),
-      venueShort: override.venueShort || "",
-      year: Number(entry.fields.year || 0),
-      type: override.type || humanType(entry.entryType, entry.fields.type),
-      tags: override.tags || [],
-      summary: override.summary || "",
-      links: {
-        ...collectLinks(entry.fields),
-        ...(override.links || {}),
-      },
-      featured: Boolean(override.featured),
-      hidden: Boolean(override.hidden),
-      thumbnail: override.thumbnail || "",
-      thumbnailAlt: override.thumbnailAlt || "",
-      equalContribution: Array.isArray(override.equalContribution) ? override.equalContribution : [],
-    };
+    const override = isPlainObject(overrides[entry.id]) ? overrides[entry.id] : {};
+
+    if (entry.id in overrides) {
+      matchedOverrideIds.add(entry.id);
+    }
+
+    const item = buildPublicationItem(entry, override);
 
     if (deduped.has(key)) {
       deduped.set(key, mergeEntries(deduped.get(key), item));
@@ -230,6 +261,12 @@ async function main() {
   };
 
   await fs.writeFile(outputPath, `${JSON.stringify(archive, null, 2)}\n`);
+
+  const unmatchedOverrideIds = Object.keys(overrides).filter((id) => !matchedOverrideIds.has(id));
+  if (unmatchedOverrideIds.length) {
+    console.warn(`Unmatched publication override IDs: ${unmatchedOverrideIds.join(", ")}`);
+  }
+
   console.log(`Wrote ${items.length} publications to ${path.relative(root, outputPath)}`);
 }
 

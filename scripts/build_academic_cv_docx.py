@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from docx import Document
@@ -76,51 +77,6 @@ EDUCATION = [
         "detail": "Double major in Mechanical Engineering and the Innovation & Design Programme (iDP). Science & Technology Undergraduate Scholarship (2016 - 2020).",
     },
 ]
-
-
-PROJECTS = [
-    {
-        "period": "2025 - Present",
-        "title": "Human-AI Collective Intelligence",
-        "institution": "MIT Center for Collective Intelligence",
-        "bullets": [
-            "Developing a deep ontology of human work activities to study where robotics and AI are currently used.",
-            "Building a large-scale dataset of the global robotics and AI landscape to analyze technology diffusion, capability evolution, and human-robot collaboration.",
-            "Designing evaluation metrics for measuring and predicting human-AI competency and performance on complex tasks.",
-        ],
-    },
-    {
-        "period": "Apr 2023 - Present",
-        "title": "Autonomous Mini-Bus",
-        "institution": "NUS · Tron-E · Turing Drive",
-        "bullets": [
-            "Led technical design across hardware layout, sensing, and the integrated autonomy stack for on-demand shuttle service.",
-            "Developed perception, HD mapping, localization, planning, and control for geofenced deployment.",
-            "Extended deployment-oriented autonomy from research prototypes into operational service scenarios.",
-        ],
-    },
-    {
-        "period": "Apr 2020 - Apr 2023",
-        "title": "Autonomous Road Sweeper",
-        "institution": "NUS · Karcher Germany",
-        "bullets": [
-            "Led the development of an autonomous cleaning platform for professional cleaning.",
-            "Retrofitted a Karcher KM 105/110 R Bp sweeper into a drive-by-wire vehicle and built the full autonomy stack for mixed indoor and outdoor operations.",
-            "Demonstrated the system to the NUS President, Karcher CTO, and external customers; transferred the prototype and software to the Karcher Robotics team for commercialization.",
-        ],
-    },
-    {
-        "period": "Jan 2019 - Dec 2019",
-        "title": "Autonomous Golf Buggies",
-        "institution": "Micron Singapore",
-        "bullets": [
-            "Led a seven-intern team and designed a fleet of autonomous golf buggies operating inside Micron Singapore Fab.",
-            "Built the drive-by-wire system, autonomy hardware, and core software modules for perception, HD mapping, planning, and MPC control.",
-            "Demonstrated the vehicles to the Deputy Prime Minister of Singapore and the Micron CEO.",
-        ],
-    },
-]
-
 
 PUBLICATIONS = [
     '[1] A. Cai*, I. Yeckehzaare*, S. Sun*, V. Charisi*, X. Wang, A. Imran, R. Laubacher, A. Prakash, and T. Malone, "Where can AI be used? Insights from a deep ontology of work activities," arXiv, 2026.',
@@ -381,7 +337,28 @@ def configure_document(doc):
     style.font.size = Pt(10.5)
 
 
-def build_document():
+def load_selected_projects(root):
+    project_data = json.loads((root / "data" / "projects.json").read_text())
+    projects_by_id = {item["id"]: item for item in project_data.get("items", [])}
+    selected_projects = []
+
+    for project_id in project_data.get("collections", {}).get("academicCv", []):
+        project = projects_by_id.get(project_id)
+        if not project:
+            continue
+        selected_projects.append(
+            {
+                "period": project.get("period", ""),
+                "title": project.get("title", ""),
+                "institution": project.get("org", ""),
+                "bullets": project.get("contributions", []),
+            }
+        )
+
+    return selected_projects
+
+
+def build_document(projects):
     doc = Document()
     configure_document(doc)
 
@@ -396,7 +373,7 @@ def build_document():
         add_entry_table(doc, item, include_bullets=False)
 
     add_section_heading(doc, "Selected Projects")
-    for item in PROJECTS:
+    for item in projects:
         add_entry_table(doc, item)
 
     add_section_heading(doc, "Selected Publications")
@@ -418,7 +395,8 @@ def main():
     root = Path(__file__).resolve().parents[1]
     output = root / "files" / "Shuo_SUN_CV_academic.docx"
     output.parent.mkdir(parents=True, exist_ok=True)
-    doc = build_document()
+    projects = load_selected_projects(root)
+    doc = build_document(projects)
     doc.save(output)
     print(output)
 

@@ -347,10 +347,19 @@ It is intentionally conservative. If a paper does not have a stable open figure 
 
 ## Projects Workflow
 
-Projects live in `assets/data/site-data.json` under `projects`.
+Projects now live in `data/projects.json`.
+
+This file is the single source of truth for:
+
+- project metadata
+- image paths and alt text
+- which projects appear on the home page
+- which projects appear on `projects.html`
+- which projects appear in the CV outputs
 
 Each project object can include:
 
+- `id`
 - `title`
 - `org`
 - `period`
@@ -359,6 +368,7 @@ Each project object can include:
 - `contributions: string[]`
 - `tags: string[]`
 - `featured: boolean`
+- `image: { src, alt }`
 - `projectUrl`
 - `paperUrl`
 - `codeUrl`
@@ -367,6 +377,7 @@ Example:
 
 ```json
 {
+  "id": "example-project",
   "title": "Example Project",
   "org": "SMART M3S",
   "period": "2026 - Present",
@@ -383,10 +394,14 @@ Example:
 }
 ```
 
-### How featured projects work
+### Project collections
 
-- home page Section 01 shows `featured: true` projects
-- `projects.html` shows the full list
+`data/projects.json` also includes curated collections so ordering and inclusion stay out of the code:
+
+- `collections.home`
+- `collections.projectsPage`
+- `collections.cv`
+- `collections.academicCv`
 
 ## Editing Text Across the Site
 
@@ -481,7 +496,7 @@ The CV page and CV PDF share the same content inputs.
 ### CV data sources
 
 - profile and links from `assets/data/site-data.json`
-- projects from `assets/data/site-data.json`
+- projects from `data/projects.json`
 - publications from `assets/data/publication-archive.json`
 - CV-only sections from `data/cv-data.json`
 

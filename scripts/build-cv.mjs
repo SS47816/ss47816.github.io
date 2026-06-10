@@ -4,6 +4,7 @@ import path from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
+import { loadProjectData, pickProjectCollection } from "./project-data.mjs";
 
 const execFileAsync = promisify(execFile);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -12,6 +13,7 @@ const root = path.resolve(__dirname, "..");
 const siteDataPath = path.join(root, "assets", "data", "site-data.json");
 const archivePath = path.join(root, "assets", "data", "publication-archive.json");
 const cvDataPath = path.join(root, "data", "cv-data.json");
+const projectDataPath = path.join(root, "data", "projects.json");
 const outputPdfPath = path.join(root, "files", "Shuo_SUN_CV.pdf");
 
 function escapeHtml(value) {
@@ -60,9 +62,9 @@ function renderOptionalSection(title, items, formatter) {
   `;
 }
 
-function renderCvHtml(site, archive, cvData) {
+function renderCvHtml(site, archive, cvData, projectData) {
   const publications = archive.items;
-  const featuredProjects = site.projects.filter((project) => project.featured);
+  const featuredProjects = pickProjectCollection(projectData, "cv");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -388,16 +390,17 @@ async function renderPdf(html) {
 }
 
 async function main() {
-  const [siteText, archiveText, cvText] = await Promise.all([
+  const [siteText, archiveText, cvText, projectData] = await Promise.all([
     fs.readFile(siteDataPath, "utf8"),
     fs.readFile(archivePath, "utf8"),
     fs.readFile(cvDataPath, "utf8"),
+    loadProjectData(projectDataPath),
   ]);
 
   const site = JSON.parse(siteText);
   const archive = JSON.parse(archiveText);
   const cvData = JSON.parse(cvText);
-  const html = renderCvHtml(site, archive, cvData);
+  const html = renderCvHtml(site, archive, cvData, projectData);
   await renderPdf(html);
   console.log(`Wrote ${path.relative(root, outputPdfPath)}`);
 }

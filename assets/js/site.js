@@ -47,7 +47,7 @@ function renderTagRow(tags = []) {
 }
 
 function renderPublicationLinks(links = {}) {
-  const items = [
+  const preferredItems = [
     ["paper", "Paper"],
     ["pdf", "PDF"],
     ["arxiv", "arXiv"],
@@ -55,9 +55,17 @@ function renderPublicationLinks(links = {}) {
     ["project", "Project"],
     ["video", "Video"],
   ];
+  const preferredKeys = new Set(preferredItems.map(([key]) => key));
+  const extraItems = Object.keys(links)
+    .filter((key) => !preferredKeys.has(key) && links[key])
+    .sort()
+    .map((key) => [key, key.replace(/([a-z0-9])([A-Z])/g, "$1 $2").replace(/[-_]+/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())]);
+  const items = [
+    ...preferredItems.filter(([key]) => links[key]),
+    ...extraItems,
+  ];
 
   return items
-    .filter(([key]) => links[key])
     .map(([key, label]) => {
       const href = escapeHtml(links[key]);
       const attrs = linkAttributes(links[key]);
@@ -170,23 +178,41 @@ function initBackToTop() {
 }
 
 async function loadData() {
-  const [siteResponse, publicationResponse, cvResponse] = await Promise.all([
+  const [siteResponse, publicationResponse, cvResponse, projectResponse] = await Promise.all([
     fetch("assets/data/site-data.json"),
     fetch("assets/data/publication-archive.json"),
     fetch("data/cv-data.json"),
+    fetch("data/projects.json"),
   ]);
 
-  if (!siteResponse.ok || !publicationResponse.ok || !cvResponse.ok) {
+  if (!siteResponse.ok || !publicationResponse.ok || !cvResponse.ok || !projectResponse.ok) {
     throw new Error("Unable to load site data.");
   }
 
-  const [site, archive, cvData] = await Promise.all([
+  const [site, archive, cvData, projectData] = await Promise.all([
     siteResponse.json(),
     publicationResponse.json(),
     cvResponse.json(),
+    projectResponse.json(),
   ]);
 
-  return { site, archive, cvData };
+  return { site, archive, cvData, projectData };
+}
+
+function ensureArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function getProjectCollection(projectData, collectionName) {
+  const items = ensureArray(projectData?.items);
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const ids = ensureArray(projectData?.collections?.[collectionName]);
+
+  if (!ids.length) {
+    return items;
+  }
+
+  return ids.map((id) => byId.get(id)).filter(Boolean);
 }
 
 function sortPublications(items = []) {
@@ -319,26 +345,9 @@ function renderPublicationStream(items, options = {}) {
 }
 
 function renderProjectMedia(project) {
-  const media = {
-    "Human-AI Collective Intelligence": {
-      src: "assets/images/project-collective-intelligence.png",
-      alt: "Human-AI collective intelligence",
-    },
-    "Autonomous Mini-bus": {
-      src: "assets/images/hero-minibus.png",
-      alt: "Autonomous mini-bus platform",
-    },
-    "Autonomous Road Sweeper": {
-      src: "assets/images/project-road-sweeper.jpg",
-      alt: "Autonomous road sweeper",
-    },
-    "Autonomous Golf Buggies": {
-      src: "assets/images/project-golf-buggies.jpg",
-      alt: "Autonomous golf buggies",
-    },
-  }[project.title];
+  const media = project.image;
 
-  if (media) {
+  if (media?.src) {
     return `<div class="project-media"><img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt)}"></div>`;
   }
 
@@ -349,21 +358,12 @@ function renderProjectMedia(project) {
   `;
 }
 
-function renderHomeProjects(site) {
-  const featuredTitles = ["Human-AI Collective Intelligence", "Autonomous Mini-bus", "Autonomous Road Sweeper", "Autonomous Golf Buggies"];
-
-  return featuredTitles
-    .map((title) => site.projects.find((project) => project.title === title))
-    .filter(Boolean)
+function renderHomeProjects(projectData) {
+  return getProjectCollection(projectData, "home")
     .map((project) => {
-      const mediaMarkup =
-        project.title === "Autonomous Mini-bus"
-          ? '<img src="assets/images/hero-minibus.png" alt="Autonomous mini-bus" />'
-          : project.title === "Autonomous Road Sweeper"
-            ? '<img src="assets/images/project-road-sweeper.jpg" alt="Autonomous road sweeper" />'
-            : project.title === "Autonomous Golf Buggies"
-              ? '<img src="assets/images/project-golf-buggies.jpg" alt="Autonomous golf buggies" />'
-              : `<span class="placeholder-mark">${escapeHtml(project.status)}</span>`;
+      const mediaMarkup = project.image?.src
+        ? `<img src="${escapeHtml(project.image.src)}" alt="${escapeHtml(project.image.alt)}" />`
+        : `<span class="placeholder-mark">${escapeHtml(project.status)}</span>`;
 
       const picClass = mediaMarkup.includes("<img") ? "pic" : "pic placeholder";
 
@@ -427,7 +427,9 @@ function renderCvSection(label, items, renderer) {
   `;
 }
 
-function renderProjects(site) {
+function renderProjects(site, projectData) {
+  const projects = getProjectCollection(projectData, "projectsPage");
+
   app.innerHTML = `
     <section class="page-section">
       <div class="wrap">
@@ -444,8 +446,7 @@ function renderProjects(site) {
     <section class="page-section">
       <div class="wrap">
         <div class="project-list-grid">
-          ${site.projects
-            .filter((project) => project.title !== "DriveSceneGen")
+          ${projects
             .map(
               (project) => `
                 <article class="project-detail ${project.featured ? "featured" : ""} reveal">
@@ -539,7 +540,9 @@ function renderPublications(site, archive) {
   renderArchive();
 }
 
-function renderCv(site, archive, cvData) {
+function renderCv(site, archive, cvData, projectData) {
+  const cvProjects = getProjectCollection(projectData, "cv");
+
   app.innerHTML = `
     <section class="page-section">
       <div class="wrap">
@@ -669,7 +672,7 @@ function renderCv(site, archive, cvData) {
 
             ${renderCvSection(
               "Selected Projects",
-              site.projects.filter((project) => project.featured),
+              cvProjects,
               (project) => `
                 <div class="cv-row">
                   <span class="cv-row-period">${escapeHtml(project.period)}</span>
@@ -734,7 +737,7 @@ function renderCv(site, archive, cvData) {
   `;
 }
 
-function enhanceHome(site, archive) {
+function enhanceHome(site, archive, projectData) {
   const affiliationsRoot = document.getElementById("current-affiliations");
   const projectRoot = document.getElementById("home-projects");
   const publicationRoot = document.getElementById("home-publications");
@@ -745,7 +748,7 @@ function enhanceHome(site, archive) {
   }
 
   if (projectRoot) {
-    projectRoot.innerHTML = renderHomeProjects(site);
+    projectRoot.innerHTML = renderHomeProjects(projectData);
   }
 
   if (publicationRoot) {
@@ -767,20 +770,20 @@ async function main() {
   }
 
   try {
-    const { site, archive, cvData } = await loadData();
+    const { site, archive, cvData, projectData } = await loadData();
 
     switch (page) {
       case "home":
-        enhanceHome(site, archive);
+        enhanceHome(site, archive, projectData);
         break;
       case "publications":
         renderPublications(site, archive);
         break;
       case "projects":
-        renderProjects(site);
+        renderProjects(site, projectData);
         break;
       case "cv":
-        renderCv(site, archive, cvData);
+        renderCv(site, archive, cvData, projectData);
         break;
       default:
         if (app) {
