@@ -135,8 +135,8 @@
   ],
   "projects": [
     {
-      "title": "Human-AI Work Intelligence",
-      "org": "SMART M3S",
+      "title": "Human-AI Collective Intelligence",
+      "org": "SMART M3S · MIT CCI",
       "period": "2025 - Present",
       "status": "Current Research Direction",
       "summary": "Current work on intelligent systems that augment human capability, support collective intelligence, and help shape more meaningful AI-enabled labor.",
@@ -150,7 +150,7 @@
         "augmentation",
         "future of work"
       ],
-      "featured": true
+      "featured": false
     },
     {
       "title": "Autonomous Mini-bus",

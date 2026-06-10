@@ -320,6 +320,10 @@ function renderPublicationStream(items, options = {}) {
 
 function renderProjectMedia(project) {
   const media = {
+    "Human-AI Collective Intelligence": {
+      src: "assets/images/project-collective-intelligence.png",
+      alt: "Human-AI collective intelligence",
+    },
     "Autonomous Mini-bus": {
       src: "assets/images/hero-minibus.png",
       alt: "Autonomous mini-bus platform",
@@ -346,7 +350,7 @@ function renderProjectMedia(project) {
 }
 
 function renderHomeProjects(site) {
-  const featuredTitles = ["Autonomous Mini-bus", "Autonomous Road Sweeper", "Autonomous Golf Buggies"];
+  const featuredTitles = ["Human-AI Collective Intelligence", "Autonomous Mini-bus", "Autonomous Road Sweeper", "Autonomous Golf Buggies"];
 
   return featuredTitles
     .map((title) => site.projects.find((project) => project.title === title))
