@@ -61,7 +61,7 @@ function renderPublicationLinks(links = {}) {
     .map(([key, label]) => {
       const href = escapeHtml(links[key]);
       const attrs = linkAttributes(links[key]);
-      return `<a class="pub-link" href="${href}" ${attrs}>${escapeHtml(label)}</a>`;
+      return `<a class="pub-link" href="${href}" ${attrs}>${escapeHtml(label)}<span aria-hidden="true">↗</span></a>`;
     })
     .join("");
 }
@@ -569,7 +569,6 @@ function renderCv(site, archive, cvData) {
               <p>${escapeHtml(site.profile.researchAreas.join(" · "))}</p>
             </div>
             <div class="link-row">
-              ${renderButtonLink(site.profile.links.cv, "Download CV", "primary")}
               ${renderButtonLink(site.profile.links.googleScholar, "Scholar")}
             </div>
           </article>
