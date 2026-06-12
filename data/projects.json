@@ -88,7 +88,7 @@
         "scenario generation",
         "autonomy research"
       ],
-      "featured": true
+      "featured": false
     },
     {
       "id": "autonomous-golf-buggies",
@@ -107,7 +107,7 @@
         "planning and control",
         "leadership"
       ],
-      "featured": false,
+      "featured": true,
       "image": {
         "src": "assets/images/project-golf-buggies.jpg",
         "alt": "Autonomous golf buggies"

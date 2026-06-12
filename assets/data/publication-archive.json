@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10",
+  "generatedAt": "2026-06-12",
   "source": "data/publications-source.bib + data/publication-overrides.json",
   "items": [
     {
@@ -188,7 +188,7 @@
     {
       "id": "computational-design-of-ultra-robust-strain-sensors-2024",
       "title": "Computational design of ultra-robust strain sensors for soft robot perception and autonomy",
-      "authors": "Yang, Haitao and Ding, Shuo and Wang, Jiahao and Sun, Shuo and Swaminathan, Ruphan and Ng, Serene Wen Ling and Pan, Xinglong and Ho, Ghim Wei",
+      "authors": "Haitao Yang and Shuo Ding and Jiahao Wang and Shuo Sun and Ruphan Swaminathan and Serene Wen Ling Ng and Xinglong Pan and Ghim Wei Ho",
       "authorsShort": "H. Yang, S. Ding, J. Wang, S. Sun, R. Swaminathan, et al.",
       "venue": "Nature Communications",
       "venueShort": "Nature Communications",
